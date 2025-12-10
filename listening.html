@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IELTS Listening</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>🎧 IELTS Listening – Practice Test</header>
+
+<div class="container">
+    <h2>Listen and answer the questions</h2>
+
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <p>1) What time does the meeting start?</p>
+    <input name="l1">
+
+    <p>2) Where will the meeting take place?</p>
+    <input name="l2">
+
+    <button onclick="gradeQuiz(['10 am','conference room'], 'l')">Chấm Listening</button>
+
+    <div id="result" class="result"></div>
+
+</div>
+
+</body>
+</html>

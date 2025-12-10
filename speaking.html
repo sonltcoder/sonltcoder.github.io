@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT: PASSAGE -->
+    <div class="passage">
+        <h2>Section A</h2>
+        <p>
+            Music is one of the human species' relatively few universal abilities...
+            (bạn đặt toàn bộ passage tại đây)
+        </p>
+
+        <h2>Section B</h2>
+        <p>
+            But thanks to a decade-long wave of neuroscience research...
+        </p>
+    </div>
+
+    <!-- RIGHT: QUESTIONS -->
+    <div class="questions">
+        <h2>Questions 1–5</h2>
+        <p>Choose the correct heading for each section from the list below.</p>
+
+        <div class="box">
+            <h3>List of Headings</h3>
+            <ul>
+                <li>i. Communication in music with animals</li>
+                <li>ii. New discoveries on animal music</li>
+                <li>iii. Music and language contrasted</li>
+                <li>iv. Current research on music</li>
+                <li>v. Music is beneficial for infants</li>
+                <li>vi. Music transcends cultures</li>
+                <li>vii. Look back at some of the historical theories</li>
+                <li>viii. Are we genetically designed for music?</li>
+            </ul>
+        </div>
+
+        <div class="question-item">
+            <span class="q-number">1</span>
+            <select id="q1">
+                <option value="">— Select —</option>
+                <option value="i">i</option>
+                <option value="ii">ii</option>
+                <option value="iii">iii</option>
+                <option value="iv">iv</option>
+                <option value="v">v</option>
+                <option value="vi">vi</option>
+                <option value="vii">vii</option>
+                <option value="viii">viii</option>
+            </select>
+            <span class="section-name">Section A</span>
+        </div>
+
+        <div class="question-item">
+            <span class="q-number">2</span>
+            <select id="q2">
+                <option value="">— Select —</option>
+                <option value="i">i</option>
+                <option value="ii">ii</option>
+                <option value="iii">iii</option>
+                <option value="iv">iv</option>
+                <option value="v">v</option>
+                <option value="vi">vi</option>
+                <option value="vii">vii</option>
+                <option value="viii">viii</option>
+            </select>
+            <span class="section-name">Section B</span>
+        </div>
+
+        <button class="submit" onclick="checkAnswers()">Hoàn thành</button>
+        <div id="result"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

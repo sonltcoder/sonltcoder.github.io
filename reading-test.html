@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Reading Test — IELTS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="container">
+    <div id="testArea" class="test-wrap">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="app.js"></script>
+  <script>
+    // get id from url
+    const params = new URLSearchParams(location.search);
+    const id = parseInt(params.get('id') || '1', 10);
+    const data = window.__IELTS_PASSAGES || [];
+    const test = data.find(p => p.id === id) || data[0];
+
+    // render UI
+    const wrap = document.getElementById('testArea');
+    const html = `
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <div>
+          <div class="h2">${test.title}</div>
+          <div style="color:#777; margin-top:6px;">${test.label} • ${test.count.toLocaleString()} lượt làm bài</div>
+        </div>
+        <div>
+          <button class="btn-check" id="saveProgressBtn">Lưu tiến trình</button>
+        </div>
+      </div>
+
+      <div class="test-grid">
+        <div class="passage">
+          <h3 style="margin-top:0;color:var(--pink-600)">Passage</h3>
+          <div style="white-space:pre-wrap; font-size:15px; line-height:1.6;">${escapeHtml(test.passage)}</div>
+        </div>
+
+        <div class="q-panel">
+          <div class="list-box">
+            <h4 style="margin:6px 0 8px;">List of Headings / Statements</h4>
+            <ul style="margin:0; padding-left:18px;">
+              <li>A. Sample statement A</li>
+              <li>B. Sample statement B</li>
+              <li>C. Sample statement C</li>
+              <li>D. Sample statement D</li>
+              <li>E. Sample statement E</li>
+              <li>F. Sample statement F</li>
+              <li>G. Sample statement G</li>
+            </ul>
+          </div>
+
+          <div id="questionsArea"></div>
+
+          <div style="margin-top:8px; display:flex; gap:12px;">
+            <button class="btn-check" id="checkBtn">Chấm điểm</button>
+            <button class="btn-check" id="resetBtn" style="background:#fff;color:var(--pink-600);border:1px solid rgba(226,58,122,0.12)">Reset</button>
+          </div>
+
+          <div id="resultBox" class="result"></div>
+        </div>
+      </div>
+    `;
+    wrap.innerHTML = html;
+
+    // helper escape
+    function escapeHtml(s){
+      return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    // render questions
+    const qArea = document.getElementById('questionsArea');
+    test.questions.forEach((q, idx) => {
+      if(q.type === 'dropdown'){
+        const row = document.createElement('div');
+        row.className = 'q-row';
+        row.innerHTML = `
+          <div class="q-num">${idx+1}</div>
+          <div style="flex:1">
+            <div style="font-weight:700">${q.q}</div>
+            <select class="answer" id="${q.id}">
+              <option value="">— Select —</option>
+              ${q.choices.map(c => `<option value="${c}">${c}</option>`).join('')}
+            </select>
+          </div>
+        `;
+        qArea.appendChild(row);
+      } else if(q.type === 'mcq'){
+        const row = document.createElement('div');
+        row.className = 'q-row';
+        row.innerHTML = `
+          <div class="q-num">${idx+1}</div>
+          <div style="flex:1">
+            <div style="font-weight:700">${q.q}</div>
+            <div style="display:flex;flex-direction:column;margin-top:8px;">
+              ${q.choices.map((c,ci) => `
+                <label style="margin-bottom:6px">
+                  <input type="radio" name="${q.id}" value="${c}"> ${c}
+                </label>`).join('')}
+            </div>
+          </div>
+        `;
+        qArea.appendChild(row);
+      }
+    });
+
+    // scoring logic
+    document.getElementById('checkBtn').addEventListener('click', ()=>{
+      let correct = 0;
+      test.questions.forEach(q=>{
+        if(q.type==='dropdown'){
+          const val = (document.getElementById(q.id).value || '').trim();
+          if(val && val === q.answer) { correct++; document.getElementById(q.id).style.border = '2px solid #00cc66'; }
+          else if(val) document.getElementById(q.id).style.border = '2px solid #ff5b6b';
+          else document.getElementById(q.id).style.border = '2px solid rgba(0,0,0,0.06)';
+        } else if(q.type==='mcq'){
+          const sel = document.querySelector(`input[name="${q.id}"]:checked`);
+          if(sel && sel.value === q.answer) {
+            correct++;
+            sel.parentElement.style.border = '1px solid #00cc66';
+          } else if(sel){
+            sel.parentElement.style.border = '1px solid #ff5b6b';
+          }
+        }
+      });
+      document.getElementById('resultBox').innerText = `Bạn đúng ${correct} / ${test.questions.length}`;
+      // save quick result to localStorage
+      const key = `ielts_passage_${test.id}_lastscore`;
+      localStorage.setItem(key, JSON.stringify({score:correct, total:test.questions.length, time:Date.now()}));
+    });
+
+    // reset
+    document.getElementById('resetBtn').addEventListener('click', ()=>{
+      test.questions.forEach(q=>{
+        if(q.type==='dropdown'){ document.getElementById(q.id).value=''; document.getElementById(q.id).style.border='1px solid rgba(0,0,0,0.08)'; }
+        else if(q.type==='mcq'){ const sel = document.querySelectorAll(`input[name="${q.id}"]`); sel.forEach(i=>{ i.checked=false; if(i.parentElement) i.parentElement.style.border='none'; }); }
+      });
+      document.getElementById('resultBox').innerText = '';
+    });
+
+    // save progress button
+    document.getElementById('saveProgressBtn').addEventListener('click', ()=>{
+      const answers = {};
+      test.questions.forEach(q=>{
+        if(q.type==='dropdown') answers[q.id] = document.getElementById(q.id).value || '';
+        else if(q.type==='mcq'){ const sel = document.querySelector(`input[name="${q.id}"]:checked`); answers[q.id] = sel ? sel.value : ''; }
+      });
+      localStorage.setItem(`ielts_passage_${test.id}_answers`, JSON.stringify(answers));
+      alert('Đã lưu tiến trình cho bài ' + test.id);
+    });
+
+    // load saved answers if any
+    (function loadSaved(){
+      const raw = localStorage.getItem(`ielts_passage_${test.id}_answers`);
+      if(!raw) return;
+      try{
+        const obj = JSON.parse(raw);
+        test.questions.forEach(q=>{
+          if(q.type==='dropdown' && obj[q.id]) document.getElementById(q.id).value = obj[q.id];
+          else if(q.type==='mcq' && obj[q.id]){
+            const sel = document.querySelectorAll(`input[name="${q.id}"]`);
+            sel.forEach(i=>{ if(i.value === obj[q.id]) i.checked = true; });
+          }
+        });
+      }catch(e){}
+    })();
+
+  </script>
+</body>
+</html>
