@@ -371,6 +371,17 @@ async function sendMsg() {
   scrollDown();
   input.value = "";
 
+  // 👉 Thêm hiệu ứng AI đang suy nghĩ
+  const typingId = "typing-" + Date.now();
+  messagesBox.innerHTML += `
+        <div id="${typingId}" class="typing-indicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        </div>
+    `;
+  scrollDown();
+
   // Gửi đến Cloudflare Worker
   const response = await fetch(WORKER_URL, {
     method: "POST",
@@ -386,12 +397,10 @@ async function sendMsg() {
   const data = await response.json();
   const aiMsg = data.choices?.[0]?.message?.content || "Error";
 
+  // 👉 Xóa typing indicator
+  document.getElementById(typingId)?.remove();
+
   // Hiện phản hồi
   messagesBox.innerHTML += `<div class="msg-ai">${aiMsg}</div>`;
   scrollDown();
 }
-
-// Enter để gửi
-document.getElementById("userInput").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") sendMsg();
-});
