@@ -348,8 +348,8 @@ const WORKER_URL = "https://broken-art-6635.sonltcoder.workers.dev";
 
 // Toggle popup
 document.getElementById("chatbotButton").onclick = () => {
-  console.log("Toggle chatbot");
   const popup = document.getElementById("chatbotPopup");
+  document.getElementById("chatMessages").innerHTML += `<div class="msg-ai">Xin chào, tôi có thể giúp gì được cho bạn?</div>`;
   popup.style.display = (popup.style.display === "flex") ? "none" : "flex";
 };
 
