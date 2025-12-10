@@ -284,24 +284,37 @@ select.answer {
   }
 }
 
-/* Nút mở chatbot */
 #chatbotButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #ff66aa;
-  color: white;
-  border-radius: 50%;
-  width: 58px;
-  height: 58px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 26px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  z-index: 9999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background: #ff66aa;
+    color: white;
+
+    border-radius: 999px;
+    padding: 14px 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+
+    z-index: 9999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+#chatbotButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
+
 
 /* Hộp chat popup */
 #chatbotPopup {

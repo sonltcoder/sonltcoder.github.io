@@ -349,7 +349,10 @@ const WORKER_URL = "https://broken-art-6635.sonltcoder.workers.dev";
 // Toggle popup
 document.getElementById("chatbotButton").onclick = () => {
   const popup = document.getElementById("chatbotPopup");
-  document.getElementById("chatMessages").innerHTML += `<div class="msg-ai">Xin chào, tôi có thể giúp gì được cho bạn?</div>`;
+  const chatMessages = document.getElementById("chatMessages");
+  if (chatMessages && chatMessages.children.length === 0) {
+    chatMessages.innerHTML += `<div class="msg-ai">Xin chào, tôi có thể giúp gì được cho bạn?</div>`;
+  }
   popup.style.display = (popup.style.display === "flex") ? "none" : "flex";
 };
 
