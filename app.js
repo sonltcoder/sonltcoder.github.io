@@ -5,6 +5,7 @@ function loadHTML(targetId, url) {
 }
 loadHTML('header', 'header.html');
 loadHTML('footer', 'footer.html');
+// loadHTML('chatbot', 'chatbot.html');
 
 /* Create sample data for 20 passages */
 const TOTAL = 20;
@@ -341,4 +342,56 @@ window.openReadingTest = openReadingTest;
 /* If the page is index.html, render now */
 document.addEventListener('DOMContentLoaded', () => {
   renderIndexCards();
+});
+
+const WORKER_URL = "https://broken-art-6635.sonltcoder.workers.dev";
+
+// Toggle popup
+document.getElementById("chatbotButton").onclick = () => {
+  console.log("Toggle chatbot");
+  const popup = document.getElementById("chatbotPopup");
+  popup.style.display = (popup.style.display === "flex") ? "none" : "flex";
+};
+
+// Auto scroll
+function scrollDown() {
+  const box = document.getElementById("chatMessages");
+  box.scrollTop = box.scrollHeight;
+}
+
+async function sendMsg() {
+  const input = document.getElementById("userInput");
+  const messagesBox = document.getElementById("chatMessages");
+
+  const userMessage = input.value.trim();
+  if (!userMessage) return;
+
+  // Hiện tin nhắn user
+  messagesBox.innerHTML += `<div class="msg-user">${userMessage}</div>`;
+  scrollDown();
+  input.value = "";
+
+  // Gửi đến Cloudflare Worker
+  const response = await fetch(WORKER_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      messages: [
+        { role: "system", content: "You are an IELTS tutoring assistant." },
+        { role: "user", content: userMessage }
+      ]
+    })
+  });
+
+  const data = await response.json();
+  const aiMsg = data.choices?.[0]?.message?.content || "Error";
+
+  // Hiện phản hồi
+  messagesBox.innerHTML += `<div class="msg-ai">${aiMsg}</div>`;
+  scrollDown();
+}
+
+// Enter để gửi
+document.getElementById("userInput").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") sendMsg();
 });
