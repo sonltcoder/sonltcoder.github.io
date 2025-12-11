@@ -15,21 +15,27 @@ const passages = [
   {
     id: 1,
     title: "[ThanhVan] - The Origins of Everyday Tools",
-    label: "Passage 1",
+    label: "Reading Test 1",
     count: 3969,
     thumb: "assets/pass1.jpg",
+    statement: `You should spend about 20 minutes on questions 1 - 13 which are based on Reading Passage below.`,
     passage:
-      `Human societies are defined by the objects we surround ourselves with. Simple tools — a sharpened stone, a woven basket, a metal nail — have shaped human routines and transformed environments. Archaeologists trace the development of these objects to intricate sequences of learning: one generation observes, adapts and passes along technique. Yet tools do not only solve immediate problems; they also create cultural practices. The way a community shapes a pot, for example, signals identity and can influence trade networks. As crafts became specialized, a division of labor emerged, and that spurred social stratification. At the same time, the raw materials available in a region — clay, stone, or metal ores — heavily influenced the design choices and the technology that developed there. Over time, tools also carry symbolic weight: ceremonial swords, ornate pottery or decorated combs encode meaning beyond utility. The study of simple objects therefore opens a window onto a society’s economy, belief systems and communication patterns.`,
+      `     Human societies are defined by the objects we surround ourselves with. Simple tools — a sharpened stone, a woven basket, a metal nail — have shaped human routines and transformed environments. Archaeologists trace the development of these objects to intricate sequences of learning: one generation observes, adapts and passes along technique. Yet tools do not only solve immediate problems; they also create cultural practices. The way a community shapes a pot, for example, signals identity and can influence trade networks. As crafts became specialized, a division of labor emerged, and that spurred social stratification. At the same time, the raw materials available in a region — clay, stone, or metal ores — heavily influenced the design choices and the technology that developed there. Over time, tools also carry symbolic weight: ceremonial swords, ornate pottery or decorated combs encode meaning beyond utility. The study of simple objects therefore opens a window onto a society’s economy, belief systems and communication patterns.
+
+      
+      Human societies are defined by the objects we surround ourselves with. Simple tools — a sharpened stone, a woven basket, a metal nail — have shaped human routines and transformed environments. Archaeologists trace the development of these objects to intricate sequences of learning: one generation observes, adapts and passes along technique. Yet tools do not only solve immediate problems; they also create cultural practices. The way a community shapes a pot, for example, signals identity and can influence trade networks. As crafts became specialized, a division of labor emerged, and that spurred social stratification. At the same time, the raw materials available in a region — clay, stone, or metal ores — heavily influenced the design choices and the technology that developed there. Over time, tools also carry symbolic weight: ceremonial swords, ornate pottery or decorated combs encode meaning beyond utility. The study of simple objects therefore opens a window onto a society’s economy, belief systems and communication patterns.
+      `,
     questions: [
       { id: "p1_q1", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
       { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" }
+      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
+      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" }
     ]
   },
   {
     id: 2,
     title: "[ThanhVan] - Urban Gardens and City Life",
-    label: "Passage 2",
+    label: "Reading Test 2",
     count: 3350,
     thumb: "assets/pass2.jpg",
     passage:
@@ -43,7 +49,7 @@ const passages = [
   {
     id: 3,
     title: "[ThanhVan] - Language Change Over Generations",
-    label: "Passage 3",
+    label: "Reading Test 3",
     count: 2086,
     thumb: "assets/pass3.jpg",
     passage:
@@ -57,7 +63,7 @@ const passages = [
   {
     id: 4,
     title: "[ThanhVan] - The Ethics of Autonomous Vehicles",
-    label: "Passage 4",
+    label: "Reading Test 4",
     count: 4020,
     thumb: "assets/pass4.jpg",
     passage:
@@ -71,7 +77,7 @@ const passages = [
   {
     id: 5,
     title: "[ThanhVan] - Small Businesses and Digital Platforms",
-    label: "Passage 5",
+    label: "Reading Test 5",
     count: 2813,
     thumb: "assets/pass5.jpg",
     passage:
@@ -85,7 +91,7 @@ const passages = [
   {
     id: 6,
     title: "[ThanhVan] - The Rewilding Movement",
-    label: "Passage 6",
+    label: "Reading Test 6",
     count: 14455,
     thumb: "assets/pass6.jpg",
     passage:
@@ -99,7 +105,7 @@ const passages = [
   {
     id: 7,
     title: "[ThanhVan] - Sleep and Memory Consolidation",
-    label: "Passage 7",
+    label: "Reading Test 7",
     count: 943,
     thumb: "assets/pass7.jpg",
     passage:
@@ -113,7 +119,7 @@ const passages = [
   {
     id: 8,
     title: "[ThanhVan] - Microplastics in the Food Chain",
-    label: "Passage 8",
+    label: "Reading Test 8",
     count: 402,
     thumb: "assets/pass8.jpg",
     passage:
@@ -127,7 +133,7 @@ const passages = [
   {
     id: 9,
     title: "[ThanhVan] - Remote Work and Urban Geography",
-    label: "Passage 9",
+    label: "Reading Test 9",
     count: 1077,
     thumb: "assets/pass9.jpg",
     passage:
@@ -141,7 +147,7 @@ const passages = [
   {
     id: 10,
     title: "[ThanhVan] - The Science of Taste",
-    label: "Passage 10",
+    label: "Reading Test 10",
     count: 4020,
     thumb: "assets/pass10.jpg",
     passage:
@@ -155,7 +161,7 @@ const passages = [
   {
     id: 11,
     title: "[ThanhVan] - Memory Aids and Modern Learning",
-    label: "Passage 11",
+    label: "Reading Test 11",
     count: 2813,
     thumb: "assets/pass11.jpg",
     passage:
@@ -169,7 +175,7 @@ const passages = [
   {
     id: 12,
     title: "[ThanhVan] - Water-Sensitive Urban Design",
-    label: "Passage 12",
+    label: "Reading Test 12",
     count: 107,
     thumb: "assets/pass12.jpg",
     passage:
@@ -183,7 +189,7 @@ const passages = [
   {
     id: 13,
     title: "[ThanhVan] - The Art Market and Digital Sales",
-    label: "Passage 13",
+    label: "Reading Test 13",
     count: 4020,
     thumb: "assets/pass13.jpg",
     passage:
@@ -197,7 +203,7 @@ const passages = [
   {
     id: 14,
     title: "[ThanhVan] - Plant Communication through Roots",
-    label: "Passage 14",
+    label: "Reading Test 14",
     count: 943,
     thumb: "assets/pass14.jpg",
     passage:
@@ -211,7 +217,7 @@ const passages = [
   {
     id: 15,
     title: "[ThanhVan] - The Revival of Artisan Baking",
-    label: "Passage 15",
+    label: "Reading Test 15",
     count: 1077,
     thumb: "assets/pass15.jpg",
     passage:
@@ -225,7 +231,7 @@ const passages = [
   {
     id: 16,
     title: "[ThanhVan] - Citizen Science and Data Quality",
-    label: "Passage 16",
+    label: "Reading Test 16",
     count: 943,
     thumb: "assets/pass16.jpg",
     passage:
@@ -239,9 +245,10 @@ const passages = [
   {
     id: 17,
     title: "[ThanhVan] - Portable Solar and Off-grid Power",
-    label: "Passage 17",
+    label: "Reading Test 17",
     count: 107,
     thumb: "assets/pass17.jpg",
+    statement: `You should spend about 20 minutes on questions 1 - 13 which are based on Reading Passage 1 below.`,
     passage:
       `Portable solar panels and battery storage are changing energy access in remote areas. Lightweight kits power lights, refrigerators and communication devices, improving living standards and supporting microenterprises. The technology is modular: households can scale systems gradually. Nevertheless, issues like battery disposal, upfront costs and seasonal variability of sunlight must be addressed. Microfinancing schemes and government subsidies can help adoption, while recycling programmes reduce environmental costs. As storage technologies improve, off-grid solar offers a promising pathway to equitable energy provision.`,
     questions: [
@@ -253,7 +260,7 @@ const passages = [
   {
     id: 18,
     title: "[ThanhVan] - Language Apps and Motivation",
-    label: "Passage 18",
+    label: "Reading Test 18",
     count: 3350,
     thumb: "assets/pass18.jpg",
     passage:
@@ -267,7 +274,7 @@ const passages = [
   {
     id: 19,
     title: "[ThanhVan] - Noise Pollution and Urban Health",
-    label: "Passage 19",
+    label: "Reading Test 19",
     count: 4020,
     thumb: "assets/pass19.jpg",
     passage:
@@ -281,7 +288,7 @@ const passages = [
   {
     id: 20,
     title: "[ThanhVan] - The Role of Libraries Today",
-    label: "Passage 20",
+    label: "Reading Test 20",
     count: 2078,
     thumb: "assets/pass20.jpg",
     passage:
@@ -374,7 +381,6 @@ async function sendMsg() {
   scrollDown();
   input.value = "";
 
-  // 👉 Thêm hiệu ứng AI đang suy nghĩ
   const typingId = "typing-" + Date.now();
   messagesBox.innerHTML += `
         <div id="${typingId}" class="typing-indicator">
