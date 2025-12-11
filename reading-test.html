@@ -1,10 +1,12 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Reading Test — IELTS</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div id="header"></div>
 
@@ -28,6 +30,10 @@
     const wrap = document.getElementById('testArea');
     const html = `
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <div id="timerBox" class="timer">
+          ⏱ <span id="timerText">60:00</span>
+        </div>
+
         <div>
           <div class="h2">${test.title}</div>
           <div style="color:#777; margin-top:6px;">${test.label} • ${test.count.toLocaleString()} lượt làm bài</div>
@@ -71,18 +77,18 @@
     wrap.innerHTML = html;
 
     // helper escape
-    function escapeHtml(s){
-      return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    function escapeHtml(s) {
+      return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
     // render questions
     const qArea = document.getElementById('questionsArea');
     test.questions.forEach((q, idx) => {
-      if(q.type === 'dropdown'){
+      if (q.type === 'dropdown') {
         const row = document.createElement('div');
         row.className = 'q-row';
         row.innerHTML = `
-          <div class="q-num">${idx+1}</div>
+          <div class="q-num">${idx + 1}</div>
           <div style="flex:1">
             <div style="font-weight:700">${q.q}</div>
             <select class="answer" id="${q.id}">
@@ -92,15 +98,15 @@
           </div>
         `;
         qArea.appendChild(row);
-      } else if(q.type === 'mcq'){
+      } else if (q.type === 'mcq') {
         const row = document.createElement('div');
         row.className = 'q-row';
         row.innerHTML = `
-          <div class="q-num">${idx+1}</div>
+          <div class="q-num">${idx + 1}</div>
           <div style="flex:1">
             <div style="font-weight:700">${q.q}</div>
             <div style="display:flex;flex-direction:column;margin-top:8px;">
-              ${q.choices.map((c,ci) => `
+              ${q.choices.map((c, ci) => `
                 <label style="margin-bottom:6px">
                   <input type="radio" name="${q.id}" value="${c}"> ${c}
                 </label>`).join('')}
@@ -112,20 +118,20 @@
     });
 
     // scoring logic
-    document.getElementById('checkBtn').addEventListener('click', ()=>{
+    document.getElementById('checkBtn').addEventListener('click', () => {
       let correct = 0;
-      test.questions.forEach(q=>{
-        if(q.type==='dropdown'){
+      test.questions.forEach(q => {
+        if (q.type === 'dropdown') {
           const val = (document.getElementById(q.id).value || '').trim();
-          if(val && val === q.answer) { correct++; document.getElementById(q.id).style.border = '2px solid #00cc66'; }
-          else if(val) document.getElementById(q.id).style.border = '2px solid #ff5b6b';
+          if (val && val === q.answer) { correct++; document.getElementById(q.id).style.border = '2px solid #00cc66'; }
+          else if (val) document.getElementById(q.id).style.border = '2px solid #ff5b6b';
           else document.getElementById(q.id).style.border = '2px solid rgba(0,0,0,0.06)';
-        } else if(q.type==='mcq'){
+        } else if (q.type === 'mcq') {
           const sel = document.querySelector(`input[name="${q.id}"]:checked`);
-          if(sel && sel.value === q.answer) {
+          if (sel && sel.value === q.answer) {
             correct++;
             sel.parentElement.style.border = '1px solid #00cc66';
-          } else if(sel){
+          } else if (sel) {
             sel.parentElement.style.border = '1px solid #ff5b6b';
           }
         }
@@ -133,45 +139,85 @@
       document.getElementById('resultBox').innerText = `Bạn đúng ${correct} / ${test.questions.length}`;
       // save quick result to localStorage
       const key = `ielts_passage_${test.id}_lastscore`;
-      localStorage.setItem(key, JSON.stringify({score:correct, total:test.questions.length, time:Date.now()}));
+      localStorage.setItem(key, JSON.stringify({ score: correct, total: test.questions.length, time: Date.now() }));
     });
 
     // reset
-    document.getElementById('resetBtn').addEventListener('click', ()=>{
-      test.questions.forEach(q=>{
-        if(q.type==='dropdown'){ document.getElementById(q.id).value=''; document.getElementById(q.id).style.border='1px solid rgba(0,0,0,0.08)'; }
-        else if(q.type==='mcq'){ const sel = document.querySelectorAll(`input[name="${q.id}"]`); sel.forEach(i=>{ i.checked=false; if(i.parentElement) i.parentElement.style.border='none'; }); }
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      test.questions.forEach(q => {
+        if (q.type === 'dropdown') { document.getElementById(q.id).value = ''; document.getElementById(q.id).style.border = '1px solid rgba(0,0,0,0.08)'; }
+        else if (q.type === 'mcq') { const sel = document.querySelectorAll(`input[name="${q.id}"]`); sel.forEach(i => { i.checked = false; if (i.parentElement) i.parentElement.style.border = 'none'; }); }
       });
       document.getElementById('resultBox').innerText = '';
     });
 
     // save progress button
-    document.getElementById('saveProgressBtn').addEventListener('click', ()=>{
+    document.getElementById('saveProgressBtn').addEventListener('click', () => {
       const answers = {};
-      test.questions.forEach(q=>{
-        if(q.type==='dropdown') answers[q.id] = document.getElementById(q.id).value || '';
-        else if(q.type==='mcq'){ const sel = document.querySelector(`input[name="${q.id}"]:checked`); answers[q.id] = sel ? sel.value : ''; }
+      test.questions.forEach(q => {
+        if (q.type === 'dropdown') answers[q.id] = document.getElementById(q.id).value || '';
+        else if (q.type === 'mcq') { const sel = document.querySelector(`input[name="${q.id}"]:checked`); answers[q.id] = sel ? sel.value : ''; }
       });
       localStorage.setItem(`ielts_passage_${test.id}_answers`, JSON.stringify(answers));
       alert('Đã lưu tiến trình cho bài ' + test.id);
     });
 
     // load saved answers if any
-    (function loadSaved(){
+    (function loadSaved() {
       const raw = localStorage.getItem(`ielts_passage_${test.id}_answers`);
-      if(!raw) return;
-      try{
+      if (!raw) return;
+      try {
         const obj = JSON.parse(raw);
-        test.questions.forEach(q=>{
-          if(q.type==='dropdown' && obj[q.id]) document.getElementById(q.id).value = obj[q.id];
-          else if(q.type==='mcq' && obj[q.id]){
+        test.questions.forEach(q => {
+          if (q.type === 'dropdown' && obj[q.id]) document.getElementById(q.id).value = obj[q.id];
+          else if (q.type === 'mcq' && obj[q.id]) {
             const sel = document.querySelectorAll(`input[name="${q.id}"]`);
-            sel.forEach(i=>{ if(i.value === obj[q.id]) i.checked = true; });
+            sel.forEach(i => { if (i.value === obj[q.id]) i.checked = true; });
           }
         });
-      }catch(e){}
+      } catch (e) { }
     })();
+
+    // =========================
+    //  TIMER COUNTDOWN 60 MIN
+    // =========================
+
+    let timeLeft = 60 * 60;   // 60 minutes = 3600 seconds
+    const timerText = document.getElementById("timerText");
+    const timerBox = document.getElementById("timerBox");
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60).toString().padStart(2, '0');
+      const s = Math.floor(sec % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    timerText.textContent = formatTime(timeLeft);
+
+    const timerInterval = setInterval(() => {
+      timeLeft--;
+      timerText.textContent = formatTime(timeLeft);
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        timerBox.classList.add("expired");
+        timerText.textContent = "HẾT GIỜ";
+
+        // khóa toàn bộ input
+        document.querySelectorAll("select, input[type=radio]").forEach(el => {
+          el.disabled = true;
+        });
+
+        // auto chấm điểm
+        document.getElementById('checkBtn').click();
+
+        alert("Hết 60 phút! Bài đã được chấm tự động.");
+      }
+
+    }, 1000);
+
 
   </script>
 </body>
+
 </html>

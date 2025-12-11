@@ -411,3 +411,20 @@ select.answer {
     20% { opacity: 1; }
     100% { opacity: 0.2; }
 }
+
+.timer {
+  background: #ffe1f0;
+  color: #d9006d;
+  padding: 8px 14px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 14px;
+  border: 1px solid #ffb3d4;
+}
+
+.timer.expired {
+  background: #ffcccc;
+  color: #a80000;
+}
