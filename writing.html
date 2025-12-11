@@ -1,29 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+
 <head>
-    <title>IELTS Writing</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="utf-8">
+  <title>IELTS Writing Collection</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #d9006d;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #ffd0e3;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #d9006d;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .card-count {
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
 </head>
+
 <body>
+  <div id="header"></div>
 
-<header>📝 IELTS Writing – Task 2</header>
+  <div class="container">
+    <div class="page-title">✍️ Writing Collection</div>
 
-<div class="container">
-    <h2>Topic:</h2>
+    <div id="writingGrid" class="card-grid"></div>
+  </div>
 
-    <p><i>
-        Some people believe that technology has made our lives more complex.  
-        Others think it has made life easier.  
-        Discuss both views and give your opinion.
-    </i></p>
+  <div id="footer"></div>
+  <script src="app.js"></script>
 
-    <textarea id="writingInput" rows="12"></textarea>
+  <script>
+    // Fake data, bạn thay bằng 20 đề thật
+    const WRITING_LIST = [
+      {
+        id: 1,
+        title: "Internet Access by Income Groups",
+        desc: "Task 1: Bar chart • Task 2: Government & Health",
+        count: 3214
+      },
+      {
+        id: 2,
+        title: "Global Water Consumption",
+        desc: "Task 1: Line chart • Task 2: Public Transport",
+        count: 1980
+      },
+      {
+        id: 3,
+        title: "Age Groups in Workforce",
+        desc: "Task 1: Table • Task 2: Education Funding",
+        count: 1452
+      }
+    ];
 
-    <button onclick="gradeWriting()">Chấm Writing</button>
+    const wrap = document.getElementById("writingGrid");
 
-    <div id="result" class="result"></div>
-</div>
+    wrap.innerHTML = WRITING_LIST.map(t => `
+      <div class="card" onclick="location.href='writing-test.html?id=${t.id}'">
+        <div class="card-title">${t.title}</div>
+        <div class="card-desc">${t.desc}</div>
+        <div class="card-count">${t.count.toLocaleString()} lượt làm bài</div>
+      </div>
+    `).join('');
+  </script>
 
 </body>
+
 </html>
