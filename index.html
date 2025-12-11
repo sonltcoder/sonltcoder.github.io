@@ -67,47 +67,8 @@
   </div>
 
   <div id="footer"></div>
-
-  <!-- Chatbot -->
-  <div id="chatbotButton">💬 <span>Chat with AI</span></div>
-
-  <div id="chatbotPopup">
-    <div id="chatHeader">AI IELTS Assistant</div>
-    <div id="chatMessages"></div>
-
-    <div id="chatInputArea">
-      <input id="userInput" placeholder="Ask me..." />
-      <button id="sendBtn" onclick="sendMsg()">Send</button>
-    </div>
-  </div>
-
+  <div id="chatbot"></div>
   <script src="app.js"></script>
-
-  <script>
-    const sendBtn = document.getElementById("sendBtn");
-    const userInput = document.getElementById("userInput");
-
-    let isComposing = false;
-
-    userInput.addEventListener("compositionstart", () => {
-      isComposing = true;
-    });
-
-    userInput.addEventListener("compositionend", () => {
-      isComposing = false;
-    });
-
-    userInput.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        if (isComposing) return; // ⛔ Fix tiếng Việt gửi 2 lần
-        e.preventDefault();
-        sendMsg();
-      }
-    });
-
-    sendBtn.addEventListener("click", sendMsg);
-  </script>
-
 </body>
 
 </html>

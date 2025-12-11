@@ -1,11 +1,26 @@
-/* Load header/footer into page */
 function loadHTML(targetId, url) {
   console.log(`Loading ${url} into #${targetId}`);
-  fetch(url).then(r => r.text()).then(t => document.getElementById(targetId).innerHTML = t).catch(e => console.error(e));
+
+  fetch(url)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById(targetId).innerHTML = html;
+
+      // Nếu là chatbot.html thì load script SAU KHI load xong HTML
+      if (url === "chatbot.html") {
+        const script = document.createElement("script");
+        script.src = "chatbot.js";
+        script.defer = true;
+        document.body.appendChild(script);
+      }
+    })
+    .catch(err => console.error("Load HTML error:", err));
 }
-loadHTML('header', 'header.html');
-loadHTML('footer', 'footer.html');
-// loadHTML('chatbot', 'chatbot.html');
+
+// Load components
+loadHTML("header", "header.html");
+loadHTML("footer", "footer.html");
+loadHTML("chatbot", "chatbot.html");
 
 /* Create sample data for 20 passages */
 const TOTAL = 20;
@@ -354,66 +369,3 @@ window.openReadingTest = openReadingTest;
 document.addEventListener('DOMContentLoaded', () => {
   renderIndexCards();
 });
-
-const WORKER_URL = "https://broken-art-6635.sonltcoder.workers.dev";
-
-// Toggle popup
-document.getElementById("chatbotButton").onclick = () => {
-  const popup = document.getElementById("chatbotPopup");
-  const chatMessages = document.getElementById("chatMessages");
-  if (chatMessages && chatMessages.children.length === 0) {
-    chatMessages.innerHTML += `<div class="msg-ai">Xin chào, tôi có thể giúp gì được cho bạn?</div>`;
-  }
-  popup.style.display = (popup.style.display === "flex") ? "none" : "flex";
-};
-
-// Auto scroll
-function scrollDown() {
-  const box = document.getElementById("chatMessages");
-  box.scrollTop = box.scrollHeight;
-}
-
-async function sendMsg() {
-  const input = document.getElementById("userInput");
-  const messagesBox = document.getElementById("chatMessages");
-
-  const userMessage = input.value.trim();
-  if (!userMessage) return;
-
-  // Hiện tin nhắn user
-  messagesBox.innerHTML += `<div class="msg-user">${userMessage}</div>`;
-  scrollDown();
-  input.value = "";
-
-  const typingId = "typing-" + Date.now();
-  messagesBox.innerHTML += `
-        <div id="${typingId}" class="typing-indicator">
-            <div class="typing-dot"></div>
-            <div class="typing-dot"></div>
-            <div class="typing-dot"></div>
-        </div>
-    `;
-  scrollDown();
-
-  // Gửi đến Cloudflare Worker
-  const response = await fetch(WORKER_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      messages: [
-        { role: "system", content: "You are an IELTS tutoring assistant." },
-        { role: "user", content: userMessage }
-      ]
-    })
-  });
-
-  const data = await response.json();
-  const aiMsg = data.choices?.[0]?.message?.content || "Error";
-
-  // 👉 Xóa typing indicator
-  document.getElementById(typingId)?.remove();
-
-  // Hiện phản hồi
-  messagesBox.innerHTML += `<div class="msg-ai">${aiMsg}</div>`;
-  scrollDown();
-}
