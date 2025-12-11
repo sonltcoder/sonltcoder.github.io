@@ -6,7 +6,6 @@ function loadHTML(targetId, url) {
     .then(html => {
       document.getElementById(targetId).innerHTML = html;
 
-      // Nếu là chatbot.html thì load script SAU KHI load xong HTML
       if (url === "chatbot.html") {
         const script = document.createElement("script");
         script.src = "chatbot.js";
@@ -21,9 +20,6 @@ function loadHTML(targetId, url) {
 loadHTML("header", "header.html");
 loadHTML("footer", "footer.html");
 loadHTML("chatbot", "chatbot.html");
-
-/* Create sample data for 20 passages */
-const TOTAL = 20;
 
 /* Build a list of passages data */
 const passages = [
@@ -320,11 +316,11 @@ const passages = [
 window.__IELTS_PASSAGES = passages;
 
 /* Render cards on index page (if exist) */
-function renderIndexCards() {
-  const el = document.getElementById('cardGrid');
+function renderIndexCards(typez, passageList) {
+  const el = document.getElementById(typez);
   if (!el) return;
   el.innerHTML = '';
-  passages.forEach(p => {
+  passageList.forEach(p => {
     const card = document.createElement('div');
     card.className = 'card';
     card.onclick = () => openReadingTest(p.id);
@@ -367,5 +363,6 @@ window.openReadingTest = openReadingTest;
 
 /* If the page is index.html, render now */
 document.addEventListener('DOMContentLoaded', () => {
-  renderIndexCards();
+  renderIndexCards('cardGrid', passages.slice(0, 4));
+  renderIndexCards('cardGrid1', passages.slice(4, 20));
 });
