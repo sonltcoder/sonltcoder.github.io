@@ -3,35 +3,81 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Reading Collection — IELTS</title>
+  <title>IELTS E-Learning — Home</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .home-container {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .home-title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #d9006d;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .skill-card {
+      background: #ffe1f0;
+      padding: 30px 20px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: 0.25s;
+      font-size: 22px;
+      font-weight: bold;
+      border: 2px solid #ffb3d4;
+    }
+
+    .skill-card:hover {
+      background: #ffb3d4;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 
 <body>
   <div id="header"></div>
 
-  <div class="container">
-    <div class="page-title">📚 Reading Collection</div>
-    <div id="cardGrid" class="card-grid">
-      <!-- cards rendered by assets/app.js -->
+  <div class="home-container">
+    <div class="home-title">🎓 IELTS E-Learning</div>
+
+    <div class="skill-grid">
+      <div class="skill-card" onclick="location.href='reading.html'">📚 Reading</div>
+      <div class="skill-card" onclick="location.href='listening.html'">🎧 Listening</div>
+      <div class="skill-card" onclick="location.href='writing.html'">✍️ Writing</div>
+      <div class="skill-card" onclick="location.href='speaking.html'">🗣 Speaking</div>
     </div>
   </div>
 
   <div id="footer"></div>
+
+  <!-- Chatbot button + popup giữ nguyên -->
   <div id="chatbot"></div>
   <div>
     <div id="chatbotButton">💬 <span>Chat with AI</span></div>
+
     <div id="chatbotPopup">
       <div id="chatHeader">AI IELTS Assistant</div>
       <div id="chatMessages"></div>
+
       <div id="chatInputArea">
         <input id="userInput" placeholder="Ask me..." />
         <button id="sendBtn" onclick="sendMsg()">Send</button>
+
         <script>
-          (function(){
+          (function () {
             var input = document.getElementById('userInput');
             if (input) {
-              input.addEventListener('keydown', function(e){
+              input.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter') {
                   e.preventDefault();
                   if (typeof sendMsg === 'function') sendMsg();
@@ -43,6 +89,7 @@
       </div>
     </div>
   </div>
+
   <script src="app.js"></script>
 </body>
 
