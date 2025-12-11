@@ -30,62 +30,6 @@ const passages = [
       { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
       { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
       { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q5", type: "dropdown", q: "Toi la Thanh Van", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q6", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q7", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q8", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q9", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q10", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q11", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q12", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q13", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q14", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q15", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q1", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q1", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q1", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
     ]
   },
   {
@@ -382,7 +326,11 @@ function renderIndexCards() {
         <div>
           <div class="${randomLabel}">${p.label}</div>
           <div class="title">${p.title}</div>
-          <div class="meta">• Gap Filling • Multiple Choice • True/False/Not Given</div>
+          <div class="meta">
+            <div>• Gap Filling</div>
+            <div>• Multiple Choice</div>
+            <div>• True/False/Not Given</div>
+          </div>
         </div>
         <div style="margin-top:12px;">
           <small style="color:#999">Click để làm bài &rarr;</small>

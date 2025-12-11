@@ -116,6 +116,7 @@
       1: {
         title: "Internet Access by Income Groups",
         task1: "The charts below show the percentage of households with Internet access in three different income groups.",
+        image: "assets/c1.png",
         task2: "Some people believe governments should invest more in public health, while others believe individuals must be responsible for their own health. Discuss both views and give your opinion."
       },
       2: {
@@ -145,6 +146,12 @@
           <div class="task-box">
             <div class="task-header">Task 1</div>
             <div class="task-text">${data.task1}</div>
+            ${data.image ? `
+      <div style="margin-top:16px; text-align:center;">
+        <img src="${data.image}" 
+             style="max-width:100%; border-radius:12px; border:1px solid #eee;">
+      </div>
+    ` : ""}
           </div>
 
           <div class="task-box" style="margin-top:20px;">
