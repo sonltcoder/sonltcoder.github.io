@@ -57,11 +57,293 @@ Today, kākāpō management continues to be guided by the kākāpō Recovery Pla
 
     `,
     questions: [
-      { id: "p1_q1", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
-      { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
-      { id: "p1_q5", type: "fill", q: "Diet consists of fern fronds, various parts of a tree and _____ nests are created in _____ where eggs are laid", answer: ["bulbs", "soil"]},
+      // ========= Questions 1–6: Multiple Choice =========
+      {
+        id: "p1_q1",
+        type: "mcq",
+        q: "What is special about the kākāpō compared to other parrots?",
+        choices: [
+          "It migrates long distances",
+          "It is nocturnal and flightless",
+          "It has brightly coloured feathers",
+          "It lives mainly in grasslands"
+        ],
+        answer: "It is nocturnal and flightless"
+      },
+      {
+        id: "p1_q2",
+        type: "mcq",
+        q: "How long can a kākāpō live according to the passage?",
+        choices: ["Up to 40 years", "Up to 60 years", "Up to 80 years", "Up to 100 years"],
+        answer: "Up to 100 years"
+      },
+      {
+        id: "p1_q3",
+        type: "mcq",
+        q: "What do kākāpō do instead of flying?",
+        choices: [
+          "Run quickly on the ground",
+          "Glide short distances",
+          "Leap from trees and descend",
+          "Swim across rivers"
+        ],
+        answer: "Leap from trees and descend"
+      },
+      {
+        id: "p1_q4",
+        type: "mcq",
+        q: "What role do male kākāpō play in raising chicks?",
+        choices: [
+          "They incubate eggs",
+          "They feed the chicks",
+          "They guard the nest",
+          "They play no role"
+        ],
+        answer: "They play no role"
+      },
+      {
+        id: "p1_q5",
+        type: "mcq",
+        q: "Why are kākāpō eggs vulnerable?",
+        choices: [
+          "They are laid in trees",
+          "The shells are very thin",
+          "Females leave nests to find food",
+          "They hatch very slowly"
+        ],
+        answer: "Females leave nests to find food"
+      },
+      {
+        id: "p1_q6",
+        type: "mcq",
+        q: "Which animals were introduced by Polynesian settlers?",
+        choices: [
+          "Cats and stoats",
+          "Rats and dogs",
+          "Possums and deer",
+          "Ferrets and weasels"
+        ],
+        answer: "Rats and dogs"
+      },
+
+      // ========= Questions 7–13: Dropdown (Matching ideas) =========
+      {
+        id: "p1_q7",
+        type: "dropdown",
+        q: "The kākāpō became endangered mainly because of:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C"
+      },
+      {
+        id: "p1_q8",
+        type: "dropdown",
+        q: "European colonisation caused:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "D"
+      },
+      {
+        id: "p1_q9",
+        type: "dropdown",
+        q: "Richard Henry attempted to save kākāpō by:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "B"
+      },
+      {
+        id: "p1_q10",
+        type: "dropdown",
+        q: "The failure of Resolution Island was due to:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "A"
+      },
+      {
+        id: "p1_q11",
+        type: "dropdown",
+        q: "Early Wildlife Service expeditions were unsuccessful because:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "E"
+      },
+      {
+        id: "p1_q12",
+        type: "dropdown",
+        q: "Rakiura Island was important because:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C"
+      },
+      {
+        id: "p1_q13",
+        type: "dropdown",
+        q: "The kākāpō population reached its lowest point at:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "D"
+      },
+
+      // ========= Questions 14–25: Fill in the blanks =========
+      {
+        id: "p1_q14",
+        type: "fill",
+        q: "The kākāpō is a _____ bird that is active at night.",
+        answer: ["nocturnal"]
+      },
+      {
+        id: "p1_q15",
+        type: "fill",
+        q: "The feathers of the kākāpō are mainly _____ in colour.",
+        answer: ["yellow-green"]
+      },
+      {
+        id: "p1_q16",
+        type: "fill",
+        q: "Kākāpō are completely _____ in their diet.",
+        answer: ["vegetarian"]
+      },
+      {
+        id: "p1_q17",
+        type: "fill",
+        q: "Eggs are laid in _____ and turned over during incubation.",
+        answer: ["soil"]
+      },
+      {
+        id: "p1_q18",
+        type: "fill",
+        q: "Before humans arrived, kākāpō were _____ throughout New Zealand.",
+        answer: ["common"]
+      },
+      {
+        id: "p1_q19",
+        type: "fill",
+        q: "European settlers introduced predators such as cats and _____.",
+        answer: ["stoats"]
+      },
+      {
+        id: "p1_q20",
+        type: "fill",
+        q: "By the mid-1900s, the kākāpō was almost a _____ species.",
+        answer: ["lost"]
+      },
+      {
+        id: "p1_q21",
+        type: "fill",
+        q: "In 1977, a population of males was discovered on _____ Island.",
+        answer: ["Rakiura"]
+      },
+      {
+        id: "p1_q22",
+        type: "fill",
+        q: "Feral _____ caused serious decline on Rakiura Island.",
+        answer: ["cats"]
+      },
+      {
+        id: "p1_q23",
+        type: "fill",
+        q: "Rats were a major predator of kākāpō _____.",
+        answer: ["chicks"]
+      },
+      {
+        id: "p1_q24",
+        type: "fill",
+        q: "The population fell to _____ birds by 1995.",
+        answer: ["51"]
+      },
+      {
+        id: "p1_q25",
+        type: "fill",
+        q: "By June 2020, the kākāpō population reached _____.",
+        answer: ["210"]
+      },
+
+      // ========= Questions 26–35: True / False / Not Given =========
+      {
+        id: "p1_q26",
+        type: "tfng",
+        q: "Kākāpō can fly short distances.",
+        answer: "False"
+      },
+      {
+        id: "p1_q27",
+        type: "tfng",
+        q: "Male kākāpō help raise chicks.",
+        answer: "False"
+      },
+      {
+        id: "p1_q28",
+        type: "tfng",
+        q: "Polynesians used kākāpō feathers for clothing.",
+        answer: "True"
+      },
+      {
+        id: "p1_q29",
+        type: "tfng",
+        q: "Deer were present in New Zealand before humans arrived.",
+        answer: "False"
+      },
+      {
+        id: "p1_q30",
+        type: "tfng",
+        q: "Resolution Island remained predator-free permanently.",
+        answer: "False"
+      },
+      {
+        id: "p1_q31",
+        type: "tfng",
+        q: "Only male kākāpō were found in early expeditions.",
+        answer: "True"
+      },
+      {
+        id: "p1_q32",
+        type: "tfng",
+        q: "All chicks produced in 1995 survived.",
+        answer: "False"
+      },
+      {
+        id: "p1_q33",
+        type: "tfng",
+        q: "Removing rats helped the population recover.",
+        answer: "True"
+      },
+      {
+        id: "p1_q34",
+        type: "tfng",
+        q: "The Recovery Plan reduced funding for conservation.",
+        answer: "False"
+      },
+      {
+        id: "p1_q35",
+        type: "tfng",
+        q: "Genetic diversity is a key goal of current management.",
+        answer: "True"
+      },
+
+      // ========= Questions 36–40: Summary Completion =========
+      {
+        id: "p1_q36",
+        type: "fill",
+        q: "The kākāpō Recovery Plan was launched in _____.",
+        answer: ["1996"]
+      },
+      {
+        id: "p1_q37",
+        type: "fill",
+        q: "Birds were moved between _____ to improve survival.",
+        answer: ["islands"]
+      },
+      {
+        id: "p1_q38",
+        type: "fill",
+        q: "Extra food was given through _____ feeding.",
+        answer: ["supplementary"]
+      },
+      {
+        id: "p1_q39",
+        type: "fill",
+        q: "Failing chicks were _____ raised by humans.",
+        answer: ["hand"]
+      },
+      {
+        id: "p1_q40",
+        type: "fill",
+        q: "The long-term aim is to protect both population size and _____ diversity.",
+        answer: ["genetic"]
+      }
     ]
   },
   {
@@ -70,12 +352,320 @@ Today, kākāpō management continues to be guided by the kākāpō Recovery Pla
     label: "Full Test 2",
     count: 3350,
     thumb: "assets/pass2.jpg",
-    passage:
-      `As cities expand, spaces for plants shrink — yet an opposite trend is growing: urban gardening. Rooftops, balconies and narrow courtyards are being transformed into small patches of green that offer more than aesthetic comfort. For residents, these gardens reduce stress, provide fresh produce and foster neighbourly connections. Local authorities sometimes support such initiatives through grants or by repurposing disused land. However, urban gardening faces obstacles: soil contamination, limited sunlight and competing demands for land. Innovative solutions, like raised planters with clean soil and hydroponic systems, are helping overcome these challenges. Importantly, community gardens frequently become educational hubs; school programs use them to teach children about ecology and nutrition. Ultimately, the spread of urban gardens signals a changing relation between people and their cities — where citizens reclaim mundane spaces for shared benefit.`,
+        passage: `
+                                            The kākāpō
+
+The kākāpō is a nocturnal, flightless parrot that is critically endangered and one of New Zealand's unique treasures
+
+The kākāpō, also known as the owl parrot, is a large, forest-dwelling bird, with a pale owl-like face. Up to 64 cm in length, it has predominantly yellow-green feathers,  forward-facing eyes, a large grey beak, large blue feet, and relatively short wings  and tail. It is the world's only flightless parrot, and is also possibly one of the world's  longest-living birds, with a reported lifespan of up to 100 years.
+
+Kākāpō are solitary birds and tend to occupy the same home range for many years.  They forage on the ground and climb high into trees. They often leap from trees and  flap their wings, but at best manage a controlled descent to the ground. They are  entirely vegetarian, with their diet including the leaves, roots and bark of trees as well as bulbs, and fern fronds.
+
+Kākāpō breed in summer and autumn, but only in years when food is plentiful.  Males play no part in incubation or chick-rearing - females alone incubate eggs and  feed the chicks. The 1-4 eggs are laid in soil, which is repeatedly turned over before  and during incubation. The female kākāpō has to spend long periods away from the  nest searching for food, which leaves the unattended eggs and chicks particularly  vulnerable to predators.
+
+Before humans arrived, kākāpō were common throughout New Zealand's forests.  However, this all changed with the arrival of the first Polynesian settlers about 700  years ago. For the early settlers, the flightless kākāpō was easy prey. They ate its  meat and used its feathers to make soft cloaks. With them came the Polynesian dog  and rat, which also preyed on kākāpō. By the time European colonisers arrived in  the early 1800s, kākāpō had become confined to the central North Island and  forested parts of the South Island. The fall in kākāpō numbers was accelerated by  European colonisation. A great deal of habitat was lost through forest clearance,  and introduced species such as deer depleted the remaining forests of food. Other  predators such as cats, stoats and two more species of rat were also introduced.  The kākāpō were in serious trouble.
+
+In 1894, the New Zealand government launched its first attempt to save the kākāpō.  Conservationist Richard Henry led an effort to relocate several hundred of the birds  to predator-free Resolution Island in Fiordland. Unfortunately, the island didn't  remain predator free - stoats arrived within six years, eventually destroying the  kākāpō population. By the mid-1900s, the kākāpō was practically a lost species.  Only a few clung to life in the most isolated parts of New Zealand.
+
+From 1949 to 1973, the newly formed New Zealand Wildlife Service made over 60  expeditions to find kākāpō, focusing mainly on Fiordland. Six were caught, but there  were no females amongst them and all but one died within a few months of captivity. In 1974, a new initiative was launched, and by 1977, 18 more kākāpō were found in  Fiordland. However, there were still no females. In 1977, a large population of males  was spotted in Rakiura - a large island free from stoats, ferrets and weasels. There were about 200 individuals, and in 1980 it was confirmed females were also present.  These birds have been the foundation of all subsequent work in managing the  species.
+
+Unfortunately, predation by feral cats on Rakiura Island led to a rapid decline in  kākāpō numbers. As a result, during 1980-97, the surviving population was  evacuated to three island sanctuaries: Codfish Island, Maud Island and Little Barrier  Island. However, breeding success was hard to achieve. Rats were found to be a  major predator of kākāpō chicks and an insufficient number of chicks survived to  offset adult mortality. By 1995, although at least 12 chicks had been produced on the islands, only three had survived. The kākāpō population had dropped to 51 birds.  The critical situation prompted an urgent review of kākāpō management in New  Zealand.
+
+In 1996, a new Recovery Plan was launched, together with a specialist advisory  group called the Kākāpō Scientific and Technical Advisory Committee and a higher  amount of funding. Renewed steps were taken to control predators on the three  islands. Cats were eradicated from Little Barrier Island in 1980, and possums were  eradicated from Codfish Island by 1986. However, the population did not start to  increase until rats were removed from all three islands, and the birds were more  intensively managed. This involved moving the birds between islands,  supplementary feeding of adults and rescuing and hand-raising any failing chicks.
+
+After the first five years of the Recovery Plan, the population was on target. By 2000,  five new females had been produced, and the total population had grown to 62 birds. For the first time, there was cautious optimism for the future of kākāpō and by  June 2020, a total of 210 birds was recorded.  
+
+Today, kākāpō management continues to be guided by the kākāpō Recovery Plan.  Its key goals are: minimise the loss of genetic diversity in the kākāpō population,  restore or maintain sufficient habitat to accommodate the expected increase in the  kākāpō population, 
+
+    `,
     questions: [
-      { id: "p2_q1", type: "dropdown", q: "The main benefit of urban gardens described is:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "A" },
-      { id: "p2_q2", type: "dropdown", q: "A challenge for urban gardening is:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "D" },
-      { id: "p2_q3", type: "mcq", q: "Which solution is mentioned for soil issues?", choices: ["Green roofs", "Raised planters", "Composting", "Mulching"], answer: "Raised planters" }
+      // ========= Questions 1–6: Multiple Choice =========
+      {
+        id: "p1_q1",
+        type: "mcq",
+        q: "What is special about the kākāpō compared to other parrots?",
+        choices: [
+          "It migrates long distances",
+          "It is nocturnal and flightless",
+          "It has brightly coloured feathers",
+          "It lives mainly in grasslands"
+        ],
+        answer: "It is nocturnal and flightless"
+      },
+      {
+        id: "p1_q2",
+        type: "mcq",
+        q: "How long can a kākāpō live according to the passage?",
+        choices: ["Up to 40 years", "Up to 60 years", "Up to 80 years", "Up to 100 years"],
+        answer: "Up to 100 years"
+      },
+      {
+        id: "p1_q3",
+        type: "mcq",
+        q: "What do kākāpō do instead of flying?",
+        choices: [
+          "Run quickly on the ground",
+          "Glide short distances",
+          "Leap from trees and descend",
+          "Swim across rivers"
+        ],
+        answer: "Leap from trees and descend"
+      },
+      {
+        id: "p1_q4",
+        type: "mcq",
+        q: "What role do male kākāpō play in raising chicks?",
+        choices: [
+          "They incubate eggs",
+          "They feed the chicks",
+          "They guard the nest",
+          "They play no role"
+        ],
+        answer: "They play no role"
+      },
+      {
+        id: "p1_q5",
+        type: "mcq",
+        q: "Why are kākāpō eggs vulnerable?",
+        choices: [
+          "They are laid in trees",
+          "The shells are very thin",
+          "Females leave nests to find food",
+          "They hatch very slowly"
+        ],
+        answer: "Females leave nests to find food"
+      },
+      {
+        id: "p1_q6",
+        type: "mcq",
+        q: "Which animals were introduced by Polynesian settlers?",
+        choices: [
+          "Cats and stoats",
+          "Rats and dogs",
+          "Possums and deer",
+          "Ferrets and weasels"
+        ],
+        answer: "Rats and dogs"
+      },
+
+      // ========= Questions 7–13: Dropdown (Matching ideas) =========
+      {
+        id: "p1_q7",
+        type: "dropdown",
+        q: "The kākāpō became endangered mainly because of:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C"
+      },
+      {
+        id: "p1_q8",
+        type: "dropdown",
+        q: "European colonisation caused:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "D"
+      },
+      {
+        id: "p1_q9",
+        type: "dropdown",
+        q: "Richard Henry attempted to save kākāpō by:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "B"
+      },
+      {
+        id: "p1_q10",
+        type: "dropdown",
+        q: "The failure of Resolution Island was due to:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "A"
+      },
+      {
+        id: "p1_q11",
+        type: "dropdown",
+        q: "Early Wildlife Service expeditions were unsuccessful because:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "E"
+      },
+      {
+        id: "p1_q12",
+        type: "dropdown",
+        q: "Rakiura Island was important because:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C"
+      },
+      {
+        id: "p1_q13",
+        type: "dropdown",
+        q: "The kākāpō population reached its lowest point at:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "D"
+      },
+
+      // ========= Questions 14–25: Fill in the blanks =========
+      {
+        id: "p1_q14",
+        type: "fill",
+        q: "The kākāpō is a _____ bird that is active at night.",
+        answer: ["nocturnal"]
+      },
+      {
+        id: "p1_q15",
+        type: "fill",
+        q: "The feathers of the kākāpō are mainly _____ in colour.",
+        answer: ["yellow-green"]
+      },
+      {
+        id: "p1_q16",
+        type: "fill",
+        q: "Kākāpō are completely _____ in their diet.",
+        answer: ["vegetarian"]
+      },
+      {
+        id: "p1_q17",
+        type: "fill",
+        q: "Eggs are laid in _____ and turned over during incubation.",
+        answer: ["soil"]
+      },
+      {
+        id: "p1_q18",
+        type: "fill",
+        q: "Before humans arrived, kākāpō were _____ throughout New Zealand.",
+        answer: ["common"]
+      },
+      {
+        id: "p1_q19",
+        type: "fill",
+        q: "European settlers introduced predators such as cats and _____.",
+        answer: ["stoats"]
+      },
+      {
+        id: "p1_q20",
+        type: "fill",
+        q: "By the mid-1900s, the kākāpō was almost a _____ species.",
+        answer: ["lost"]
+      },
+      {
+        id: "p1_q21",
+        type: "fill",
+        q: "In 1977, a population of males was discovered on _____ Island.",
+        answer: ["Rakiura"]
+      },
+      {
+        id: "p1_q22",
+        type: "fill",
+        q: "Feral _____ caused serious decline on Rakiura Island.",
+        answer: ["cats"]
+      },
+      {
+        id: "p1_q23",
+        type: "fill",
+        q: "Rats were a major predator of kākāpō _____.",
+        answer: ["chicks"]
+      },
+      {
+        id: "p1_q24",
+        type: "fill",
+        q: "The population fell to _____ birds by 1995.",
+        answer: ["51"]
+      },
+      {
+        id: "p1_q25",
+        type: "fill",
+        q: "By June 2020, the kākāpō population reached _____.",
+        answer: ["210"]
+      },
+
+      // ========= Questions 26–35: True / False / Not Given =========
+      {
+        id: "p1_q26",
+        type: "tfng",
+        q: "Kākāpō can fly short distances.",
+        answer: "False"
+      },
+      {
+        id: "p1_q27",
+        type: "tfng",
+        q: "Male kākāpō help raise chicks.",
+        answer: "False"
+      },
+      {
+        id: "p1_q28",
+        type: "tfng",
+        q: "Polynesians used kākāpō feathers for clothing.",
+        answer: "True"
+      },
+      {
+        id: "p1_q29",
+        type: "tfng",
+        q: "Deer were present in New Zealand before humans arrived.",
+        answer: "False"
+      },
+      {
+        id: "p1_q30",
+        type: "tfng",
+        q: "Resolution Island remained predator-free permanently.",
+        answer: "False"
+      },
+      {
+        id: "p1_q31",
+        type: "tfng",
+        q: "Only male kākāpō were found in early expeditions.",
+        answer: "True"
+      },
+      {
+        id: "p1_q32",
+        type: "tfng",
+        q: "All chicks produced in 1995 survived.",
+        answer: "False"
+      },
+      {
+        id: "p1_q33",
+        type: "tfng",
+        q: "Removing rats helped the population recover.",
+        answer: "True"
+      },
+      {
+        id: "p1_q34",
+        type: "tfng",
+        q: "The Recovery Plan reduced funding for conservation.",
+        answer: "False"
+      },
+      {
+        id: "p1_q35",
+        type: "tfng",
+        q: "Genetic diversity is a key goal of current management.",
+        answer: "True"
+      },
+
+      // ========= Questions 36–40: Summary Completion =========
+      {
+        id: "p1_q36",
+        type: "fill",
+        q: "The kākāpō Recovery Plan was launched in _____.",
+        answer: ["1996"]
+      },
+      {
+        id: "p1_q37",
+        type: "fill",
+        q: "Birds were moved between _____ to improve survival.",
+        answer: ["islands"]
+      },
+      {
+        id: "p1_q38",
+        type: "fill",
+        q: "Extra food was given through _____ feeding.",
+        answer: ["supplementary"]
+      },
+      {
+        id: "p1_q39",
+        type: "fill",
+        q: "Failing chicks were _____ raised by humans.",
+        answer: ["hand"]
+      },
+      {
+        id: "p1_q40",
+        type: "fill",
+        q: "The long-term aim is to protect both population size and _____ diversity.",
+        answer: ["genetic"]
+      }
     ]
   },
   {
@@ -84,13 +674,322 @@ Today, kākāpō management continues to be guided by the kākāpō Recovery Pla
     label: "Full Test 3",
     count: 2086,
     thumb: "assets/pass3.jpg",
-    passage:
-      `Languages are living systems that evolve as speakers adapt to social needs and external influences. New words appear, old structures fade and pronunciation shifts gradually. While some changes happen due to internal simplification — making phrases easier to say — others arise through contact with different tongues: trade, migration and media create loan-words and new patterns. Education systems attempt to stabilise language by prescribing norms, but informal speech communities often lead change. Interestingly, researchers note that younger speakers frequently innovate in grammar and vocabulary as a marker of identity. Over decades, such innovations can spread widely, resulting in dialect convergence or divergence. A further factor is technology; digital communication favours brevity and has introduced abbreviations that, in time, may become standard vocabulary.`,
+        passage: `
+                                            The kākāpō
+
+The kākāpō is a nocturnal, flightless parrot that is critically endangered and one of New Zealand's unique treasures
+
+The kākāpō, also known as the owl parrot, is a large, forest-dwelling bird, with a pale owl-like face. Up to 64 cm in length, it has predominantly yellow-green feathers,  forward-facing eyes, a large grey beak, large blue feet, and relatively short wings  and tail. It is the world's only flightless parrot, and is also possibly one of the world's  longest-living birds, with a reported lifespan of up to 100 years.
+
+Kākāpō are solitary birds and tend to occupy the same home range for many years.  They forage on the ground and climb high into trees. They often leap from trees and  flap their wings, but at best manage a controlled descent to the ground. They are  entirely vegetarian, with their diet including the leaves, roots and bark of trees as well as bulbs, and fern fronds.
+
+Kākāpō breed in summer and autumn, but only in years when food is plentiful.  Males play no part in incubation or chick-rearing - females alone incubate eggs and  feed the chicks. The 1-4 eggs are laid in soil, which is repeatedly turned over before  and during incubation. The female kākāpō has to spend long periods away from the  nest searching for food, which leaves the unattended eggs and chicks particularly  vulnerable to predators.
+
+Before humans arrived, kākāpō were common throughout New Zealand's forests.  However, this all changed with the arrival of the first Polynesian settlers about 700  years ago. For the early settlers, the flightless kākāpō was easy prey. They ate its  meat and used its feathers to make soft cloaks. With them came the Polynesian dog  and rat, which also preyed on kākāpō. By the time European colonisers arrived in  the early 1800s, kākāpō had become confined to the central North Island and  forested parts of the South Island. The fall in kākāpō numbers was accelerated by  European colonisation. A great deal of habitat was lost through forest clearance,  and introduced species such as deer depleted the remaining forests of food. Other  predators such as cats, stoats and two more species of rat were also introduced.  The kākāpō were in serious trouble.
+
+In 1894, the New Zealand government launched its first attempt to save the kākāpō.  Conservationist Richard Henry led an effort to relocate several hundred of the birds  to predator-free Resolution Island in Fiordland. Unfortunately, the island didn't  remain predator free - stoats arrived within six years, eventually destroying the  kākāpō population. By the mid-1900s, the kākāpō was practically a lost species.  Only a few clung to life in the most isolated parts of New Zealand.
+
+From 1949 to 1973, the newly formed New Zealand Wildlife Service made over 60  expeditions to find kākāpō, focusing mainly on Fiordland. Six were caught, but there  were no females amongst them and all but one died within a few months of captivity. In 1974, a new initiative was launched, and by 1977, 18 more kākāpō were found in  Fiordland. However, there were still no females. In 1977, a large population of males  was spotted in Rakiura - a large island free from stoats, ferrets and weasels. There were about 200 individuals, and in 1980 it was confirmed females were also present.  These birds have been the foundation of all subsequent work in managing the  species.
+
+Unfortunately, predation by feral cats on Rakiura Island led to a rapid decline in  kākāpō numbers. As a result, during 1980-97, the surviving population was  evacuated to three island sanctuaries: Codfish Island, Maud Island and Little Barrier  Island. However, breeding success was hard to achieve. Rats were found to be a  major predator of kākāpō chicks and an insufficient number of chicks survived to  offset adult mortality. By 1995, although at least 12 chicks had been produced on the islands, only three had survived. The kākāpō population had dropped to 51 birds.  The critical situation prompted an urgent review of kākāpō management in New  Zealand.
+
+In 1996, a new Recovery Plan was launched, together with a specialist advisory  group called the Kākāpō Scientific and Technical Advisory Committee and a higher  amount of funding. Renewed steps were taken to control predators on the three  islands. Cats were eradicated from Little Barrier Island in 1980, and possums were  eradicated from Codfish Island by 1986. However, the population did not start to  increase until rats were removed from all three islands, and the birds were more  intensively managed. This involved moving the birds between islands,  supplementary feeding of adults and rescuing and hand-raising any failing chicks.
+
+After the first five years of the Recovery Plan, the population was on target. By 2000,  five new females had been produced, and the total population had grown to 62 birds. For the first time, there was cautious optimism for the future of kākāpō and by  June 2020, a total of 210 birds was recorded.  
+
+Today, kākāpō management continues to be guided by the kākāpō Recovery Plan.  Its key goals are: minimise the loss of genetic diversity in the kākāpō population,  restore or maintain sufficient habitat to accommodate the expected increase in the  kākāpō population, 
+
+    `,
     questions: [
-      { id: "p3_q1", type: "dropdown", q: "The passage mainly explains why language:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "C" },
-      { id: "p3_q2", type: "dropdown", q: "Which force is NOT mentioned as influencing change?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "E" },
-      { id: "p3_q3", type: "mcq", q: "What do researchers associate with younger speakers?", choices: ["Resistance to change", "Innovation in language", "Better grammar", "Slower speech"], answer: "Innovation in language" }
+      // ========= Questions 1–6: Multiple Choice =========
+      {
+        id: "p1_q1",
+        type: "mcq",
+        q: "What is special about the kākāpō compared to other parrots?",
+        choices: [
+          "It migrates long distances",
+          "It is nocturnal and flightless",
+          "It has brightly coloured feathers",
+          "It lives mainly in grasslands"
+        ],
+        answer: "It is nocturnal and flightless"
+      },
+      {
+        id: "p1_q2",
+        type: "mcq",
+        q: "How long can a kākāpō live according to the passage?",
+        choices: ["Up to 40 years", "Up to 60 years", "Up to 80 years", "Up to 100 years"],
+        answer: "Up to 100 years"
+      },
+      {
+        id: "p1_q3",
+        type: "mcq",
+        q: "What do kākāpō do instead of flying?",
+        choices: [
+          "Run quickly on the ground",
+          "Glide short distances",
+          "Leap from trees and descend",
+          "Swim across rivers"
+        ],
+        answer: "Leap from trees and descend"
+      },
+      {
+        id: "p1_q4",
+        type: "mcq",
+        q: "What role do male kākāpō play in raising chicks?",
+        choices: [
+          "They incubate eggs",
+          "They feed the chicks",
+          "They guard the nest",
+          "They play no role"
+        ],
+        answer: "They play no role"
+      },
+      {
+        id: "p1_q5",
+        type: "mcq",
+        q: "Why are kākāpō eggs vulnerable?",
+        choices: [
+          "They are laid in trees",
+          "The shells are very thin",
+          "Females leave nests to find food",
+          "They hatch very slowly"
+        ],
+        answer: "Females leave nests to find food"
+      },
+      {
+        id: "p1_q6",
+        type: "mcq",
+        q: "Which animals were introduced by Polynesian settlers?",
+        choices: [
+          "Cats and stoats",
+          "Rats and dogs",
+          "Possums and deer",
+          "Ferrets and weasels"
+        ],
+        answer: "Rats and dogs"
+      },
+
+      // ========= Questions 7–13: Dropdown (Matching ideas) =========
+      {
+        id: "p1_q7",
+        type: "dropdown",
+        q: "The kākāpō became endangered mainly because of:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C"
+      },
+      {
+        id: "p1_q8",
+        type: "dropdown",
+        q: "European colonisation caused:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "D"
+      },
+      {
+        id: "p1_q9",
+        type: "dropdown",
+        q: "Richard Henry attempted to save kākāpō by:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "B"
+      },
+      {
+        id: "p1_q10",
+        type: "dropdown",
+        q: "The failure of Resolution Island was due to:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "A"
+      },
+      {
+        id: "p1_q11",
+        type: "dropdown",
+        q: "Early Wildlife Service expeditions were unsuccessful because:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "E"
+      },
+      {
+        id: "p1_q12",
+        type: "dropdown",
+        q: "Rakiura Island was important because:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C"
+      },
+      {
+        id: "p1_q13",
+        type: "dropdown",
+        q: "The kākāpō population reached its lowest point at:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "D"
+      },
+
+      // ========= Questions 14–25: Fill in the blanks =========
+      {
+        id: "p1_q14",
+        type: "fill",
+        q: "The kākāpō is a _____ bird that is active at night.",
+        answer: ["nocturnal"]
+      },
+      {
+        id: "p1_q15",
+        type: "fill",
+        q: "The feathers of the kākāpō are mainly _____ in colour.",
+        answer: ["yellow-green"]
+      },
+      {
+        id: "p1_q16",
+        type: "fill",
+        q: "Kākāpō are completely _____ in their diet.",
+        answer: ["vegetarian"]
+      },
+      {
+        id: "p1_q17",
+        type: "fill",
+        q: "Eggs are laid in _____ and turned over during incubation.",
+        answer: ["soil"]
+      },
+      {
+        id: "p1_q18",
+        type: "fill",
+        q: "Before humans arrived, kākāpō were _____ throughout New Zealand.",
+        answer: ["common"]
+      },
+      {
+        id: "p1_q19",
+        type: "fill",
+        q: "European settlers introduced predators such as cats and _____.",
+        answer: ["stoats"]
+      },
+      {
+        id: "p1_q20",
+        type: "fill",
+        q: "By the mid-1900s, the kākāpō was almost a _____ species.",
+        answer: ["lost"]
+      },
+      {
+        id: "p1_q21",
+        type: "fill",
+        q: "In 1977, a population of males was discovered on _____ Island.",
+        answer: ["Rakiura"]
+      },
+      {
+        id: "p1_q22",
+        type: "fill",
+        q: "Feral _____ caused serious decline on Rakiura Island.",
+        answer: ["cats"]
+      },
+      {
+        id: "p1_q23",
+        type: "fill",
+        q: "Rats were a major predator of kākāpō _____.",
+        answer: ["chicks"]
+      },
+      {
+        id: "p1_q24",
+        type: "fill",
+        q: "The population fell to _____ birds by 1995.",
+        answer: ["51"]
+      },
+      {
+        id: "p1_q25",
+        type: "fill",
+        q: "By June 2020, the kākāpō population reached _____.",
+        answer: ["210"]
+      },
+
+      // ========= Questions 26–35: True / False / Not Given =========
+      {
+        id: "p1_q26",
+        type: "tfng",
+        q: "Kākāpō can fly short distances.",
+        answer: "False"
+      },
+      {
+        id: "p1_q27",
+        type: "tfng",
+        q: "Male kākāpō help raise chicks.",
+        answer: "False"
+      },
+      {
+        id: "p1_q28",
+        type: "tfng",
+        q: "Polynesians used kākāpō feathers for clothing.",
+        answer: "True"
+      },
+      {
+        id: "p1_q29",
+        type: "tfng",
+        q: "Deer were present in New Zealand before humans arrived.",
+        answer: "False"
+      },
+      {
+        id: "p1_q30",
+        type: "tfng",
+        q: "Resolution Island remained predator-free permanently.",
+        answer: "False"
+      },
+      {
+        id: "p1_q31",
+        type: "tfng",
+        q: "Only male kākāpō were found in early expeditions.",
+        answer: "True"
+      },
+      {
+        id: "p1_q32",
+        type: "tfng",
+        q: "All chicks produced in 1995 survived.",
+        answer: "False"
+      },
+      {
+        id: "p1_q33",
+        type: "tfng",
+        q: "Removing rats helped the population recover.",
+        answer: "True"
+      },
+      {
+        id: "p1_q34",
+        type: "tfng",
+        q: "The Recovery Plan reduced funding for conservation.",
+        answer: "False"
+      },
+      {
+        id: "p1_q35",
+        type: "tfng",
+        q: "Genetic diversity is a key goal of current management.",
+        answer: "True"
+      },
+
+      // ========= Questions 36–40: Summary Completion =========
+      {
+        id: "p1_q36",
+        type: "fill",
+        q: "The kākāpō Recovery Plan was launched in _____.",
+        answer: ["1996"]
+      },
+      {
+        id: "p1_q37",
+        type: "fill",
+        q: "Birds were moved between _____ to improve survival.",
+        answer: ["islands"]
+      },
+      {
+        id: "p1_q38",
+        type: "fill",
+        q: "Extra food was given through _____ feeding.",
+        answer: ["supplementary"]
+      },
+      {
+        id: "p1_q39",
+        type: "fill",
+        q: "Failing chicks were _____ raised by humans.",
+        answer: ["hand"]
+      },
+      {
+        id: "p1_q40",
+        type: "fill",
+        q: "The long-term aim is to protect both population size and _____ diversity.",
+        answer: ["genetic"]
+      }
     ]
+
   },
   {
     id: 4,
@@ -98,12 +997,320 @@ Today, kākāpō management continues to be guided by the kākāpō Recovery Pla
     label: "Full Test 4",
     count: 4020,
     thumb: "assets/pass4.jpg",
-    passage:
-      `When machines are entrusted with driving decisions, ethical dilemmas arise. Autonomous vehicles must be programmed to respond to unpredictable events on the road; their choices may involve trade-offs between property and human life. Philosophers discuss scenarios where harm is unavoidable — who should the vehicle prioritise? Engineers often adopt utilitarian frameworks, aiming to minimise total harm, but critics argue that programming such trade-offs imposes subjective values. Legal systems also face new questions: who is liable when an autonomous vehicle causes injury — the manufacturer, the software developer or the owner? Proponents emphasise the overall safety benefits: human error causes most accidents, and removing that element could substantially reduce casualties. Still, public acceptance depends on trust, transparent regulation and clear ethical guidelines.`,
+        passage: `
+                                            The kākāpō
+
+The kākāpō is a nocturnal, flightless parrot that is critically endangered and one of New Zealand's unique treasures
+
+The kākāpō, also known as the owl parrot, is a large, forest-dwelling bird, with a pale owl-like face. Up to 64 cm in length, it has predominantly yellow-green feathers,  forward-facing eyes, a large grey beak, large blue feet, and relatively short wings  and tail. It is the world's only flightless parrot, and is also possibly one of the world's  longest-living birds, with a reported lifespan of up to 100 years.
+
+Kākāpō are solitary birds and tend to occupy the same home range for many years.  They forage on the ground and climb high into trees. They often leap from trees and  flap their wings, but at best manage a controlled descent to the ground. They are  entirely vegetarian, with their diet including the leaves, roots and bark of trees as well as bulbs, and fern fronds.
+
+Kākāpō breed in summer and autumn, but only in years when food is plentiful.  Males play no part in incubation or chick-rearing - females alone incubate eggs and  feed the chicks. The 1-4 eggs are laid in soil, which is repeatedly turned over before  and during incubation. The female kākāpō has to spend long periods away from the  nest searching for food, which leaves the unattended eggs and chicks particularly  vulnerable to predators.
+
+Before humans arrived, kākāpō were common throughout New Zealand's forests.  However, this all changed with the arrival of the first Polynesian settlers about 700  years ago. For the early settlers, the flightless kākāpō was easy prey. They ate its  meat and used its feathers to make soft cloaks. With them came the Polynesian dog  and rat, which also preyed on kākāpō. By the time European colonisers arrived in  the early 1800s, kākāpō had become confined to the central North Island and  forested parts of the South Island. The fall in kākāpō numbers was accelerated by  European colonisation. A great deal of habitat was lost through forest clearance,  and introduced species such as deer depleted the remaining forests of food. Other  predators such as cats, stoats and two more species of rat were also introduced.  The kākāpō were in serious trouble.
+
+In 1894, the New Zealand government launched its first attempt to save the kākāpō.  Conservationist Richard Henry led an effort to relocate several hundred of the birds  to predator-free Resolution Island in Fiordland. Unfortunately, the island didn't  remain predator free - stoats arrived within six years, eventually destroying the  kākāpō population. By the mid-1900s, the kākāpō was practically a lost species.  Only a few clung to life in the most isolated parts of New Zealand.
+
+From 1949 to 1973, the newly formed New Zealand Wildlife Service made over 60  expeditions to find kākāpō, focusing mainly on Fiordland. Six were caught, but there  were no females amongst them and all but one died within a few months of captivity. In 1974, a new initiative was launched, and by 1977, 18 more kākāpō were found in  Fiordland. However, there were still no females. In 1977, a large population of males  was spotted in Rakiura - a large island free from stoats, ferrets and weasels. There were about 200 individuals, and in 1980 it was confirmed females were also present.  These birds have been the foundation of all subsequent work in managing the  species.
+
+Unfortunately, predation by feral cats on Rakiura Island led to a rapid decline in  kākāpō numbers. As a result, during 1980-97, the surviving population was  evacuated to three island sanctuaries: Codfish Island, Maud Island and Little Barrier  Island. However, breeding success was hard to achieve. Rats were found to be a  major predator of kākāpō chicks and an insufficient number of chicks survived to  offset adult mortality. By 1995, although at least 12 chicks had been produced on the islands, only three had survived. The kākāpō population had dropped to 51 birds.  The critical situation prompted an urgent review of kākāpō management in New  Zealand.
+
+In 1996, a new Recovery Plan was launched, together with a specialist advisory  group called the Kākāpō Scientific and Technical Advisory Committee and a higher  amount of funding. Renewed steps were taken to control predators on the three  islands. Cats were eradicated from Little Barrier Island in 1980, and possums were  eradicated from Codfish Island by 1986. However, the population did not start to  increase until rats were removed from all three islands, and the birds were more  intensively managed. This involved moving the birds between islands,  supplementary feeding of adults and rescuing and hand-raising any failing chicks.
+
+After the first five years of the Recovery Plan, the population was on target. By 2000,  five new females had been produced, and the total population had grown to 62 birds. For the first time, there was cautious optimism for the future of kākāpō and by  June 2020, a total of 210 birds was recorded.  
+
+Today, kākāpō management continues to be guided by the kākāpō Recovery Plan.  Its key goals are: minimise the loss of genetic diversity in the kākāpō population,  restore or maintain sufficient habitat to accommodate the expected increase in the  kākāpō population, 
+
+    `,
     questions: [
-      { id: "p4_q1", type: "dropdown", q: "A central concern in the passage is:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
-      { id: "p4_q2", type: "dropdown", q: "Which viewpoint is attributed to proponents?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
-      { id: "p4_q3", type: "mcq", q: "Who might be held responsible legally?", choices: ["The manufacturer", "The pedestrian", "The weather", "No one"], answer: "The manufacturer" }
+      // ========= Questions 1–6: Multiple Choice =========
+      {
+        id: "p1_q1",
+        type: "mcq",
+        q: "What is special about the kākāpō compared to other parrots?",
+        choices: [
+          "It migrates long distances",
+          "It is nocturnal and flightless",
+          "It has brightly coloured feathers",
+          "It lives mainly in grasslands"
+        ],
+        answer: "It is nocturnal and flightless"
+      },
+      {
+        id: "p1_q2",
+        type: "mcq",
+        q: "How long can a kākāpō live according to the passage?",
+        choices: ["Up to 40 years", "Up to 60 years", "Up to 80 years", "Up to 100 years"],
+        answer: "Up to 100 years"
+      },
+      {
+        id: "p1_q3",
+        type: "mcq",
+        q: "What do kākāpō do instead of flying?",
+        choices: [
+          "Run quickly on the ground",
+          "Glide short distances",
+          "Leap from trees and descend",
+          "Swim across rivers"
+        ],
+        answer: "Leap from trees and descend"
+      },
+      {
+        id: "p1_q4",
+        type: "mcq",
+        q: "What role do male kākāpō play in raising chicks?",
+        choices: [
+          "They incubate eggs",
+          "They feed the chicks",
+          "They guard the nest",
+          "They play no role"
+        ],
+        answer: "They play no role"
+      },
+      {
+        id: "p1_q5",
+        type: "mcq",
+        q: "Why are kākāpō eggs vulnerable?",
+        choices: [
+          "They are laid in trees",
+          "The shells are very thin",
+          "Females leave nests to find food",
+          "They hatch very slowly"
+        ],
+        answer: "Females leave nests to find food"
+      },
+      {
+        id: "p1_q6",
+        type: "mcq",
+        q: "Which animals were introduced by Polynesian settlers?",
+        choices: [
+          "Cats and stoats",
+          "Rats and dogs",
+          "Possums and deer",
+          "Ferrets and weasels"
+        ],
+        answer: "Rats and dogs"
+      },
+
+      // ========= Questions 7–13: Dropdown (Matching ideas) =========
+      {
+        id: "p1_q7",
+        type: "dropdown",
+        q: "The kākāpō became endangered mainly because of:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C"
+      },
+      {
+        id: "p1_q8",
+        type: "dropdown",
+        q: "European colonisation caused:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "D"
+      },
+      {
+        id: "p1_q9",
+        type: "dropdown",
+        q: "Richard Henry attempted to save kākāpō by:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "B"
+      },
+      {
+        id: "p1_q10",
+        type: "dropdown",
+        q: "The failure of Resolution Island was due to:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "A"
+      },
+      {
+        id: "p1_q11",
+        type: "dropdown",
+        q: "Early Wildlife Service expeditions were unsuccessful because:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "E"
+      },
+      {
+        id: "p1_q12",
+        type: "dropdown",
+        q: "Rakiura Island was important because:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C"
+      },
+      {
+        id: "p1_q13",
+        type: "dropdown",
+        q: "The kākāpō population reached its lowest point at:",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "D"
+      },
+
+      // ========= Questions 14–25: Fill in the blanks =========
+      {
+        id: "p1_q14",
+        type: "fill",
+        q: "The kākāpō is a _____ bird that is active at night.",
+        answer: ["nocturnal"]
+      },
+      {
+        id: "p1_q15",
+        type: "fill",
+        q: "The feathers of the kākāpō are mainly _____ in colour.",
+        answer: ["yellow-green"]
+      },
+      {
+        id: "p1_q16",
+        type: "fill",
+        q: "Kākāpō are completely _____ in their diet.",
+        answer: ["vegetarian"]
+      },
+      {
+        id: "p1_q17",
+        type: "fill",
+        q: "Eggs are laid in _____ and turned over during incubation.",
+        answer: ["soil"]
+      },
+      {
+        id: "p1_q18",
+        type: "fill",
+        q: "Before humans arrived, kākāpō were _____ throughout New Zealand.",
+        answer: ["common"]
+      },
+      {
+        id: "p1_q19",
+        type: "fill",
+        q: "European settlers introduced predators such as cats and _____.",
+        answer: ["stoats"]
+      },
+      {
+        id: "p1_q20",
+        type: "fill",
+        q: "By the mid-1900s, the kākāpō was almost a _____ species.",
+        answer: ["lost"]
+      },
+      {
+        id: "p1_q21",
+        type: "fill",
+        q: "In 1977, a population of males was discovered on _____ Island.",
+        answer: ["Rakiura"]
+      },
+      {
+        id: "p1_q22",
+        type: "fill",
+        q: "Feral _____ caused serious decline on Rakiura Island.",
+        answer: ["cats"]
+      },
+      {
+        id: "p1_q23",
+        type: "fill",
+        q: "Rats were a major predator of kākāpō _____.",
+        answer: ["chicks"]
+      },
+      {
+        id: "p1_q24",
+        type: "fill",
+        q: "The population fell to _____ birds by 1995.",
+        answer: ["51"]
+      },
+      {
+        id: "p1_q25",
+        type: "fill",
+        q: "By June 2020, the kākāpō population reached _____.",
+        answer: ["210"]
+      },
+
+      // ========= Questions 26–35: True / False / Not Given =========
+      {
+        id: "p1_q26",
+        type: "tfng",
+        q: "Kākāpō can fly short distances.",
+        answer: "False"
+      },
+      {
+        id: "p1_q27",
+        type: "tfng",
+        q: "Male kākāpō help raise chicks.",
+        answer: "False"
+      },
+      {
+        id: "p1_q28",
+        type: "tfng",
+        q: "Polynesians used kākāpō feathers for clothing.",
+        answer: "True"
+      },
+      {
+        id: "p1_q29",
+        type: "tfng",
+        q: "Deer were present in New Zealand before humans arrived.",
+        answer: "False"
+      },
+      {
+        id: "p1_q30",
+        type: "tfng",
+        q: "Resolution Island remained predator-free permanently.",
+        answer: "False"
+      },
+      {
+        id: "p1_q31",
+        type: "tfng",
+        q: "Only male kākāpō were found in early expeditions.",
+        answer: "True"
+      },
+      {
+        id: "p1_q32",
+        type: "tfng",
+        q: "All chicks produced in 1995 survived.",
+        answer: "False"
+      },
+      {
+        id: "p1_q33",
+        type: "tfng",
+        q: "Removing rats helped the population recover.",
+        answer: "True"
+      },
+      {
+        id: "p1_q34",
+        type: "tfng",
+        q: "The Recovery Plan reduced funding for conservation.",
+        answer: "False"
+      },
+      {
+        id: "p1_q35",
+        type: "tfng",
+        q: "Genetic diversity is a key goal of current management.",
+        answer: "True"
+      },
+
+      // ========= Questions 36–40: Summary Completion =========
+      {
+        id: "p1_q36",
+        type: "fill",
+        q: "The kākāpō Recovery Plan was launched in _____.",
+        answer: ["1996"]
+      },
+      {
+        id: "p1_q37",
+        type: "fill",
+        q: "Birds were moved between _____ to improve survival.",
+        answer: ["islands"]
+      },
+      {
+        id: "p1_q38",
+        type: "fill",
+        q: "Extra food was given through _____ feeding.",
+        answer: ["supplementary"]
+      },
+      {
+        id: "p1_q39",
+        type: "fill",
+        q: "Failing chicks were _____ raised by humans.",
+        answer: ["hand"]
+      },
+      {
+        id: "p1_q40",
+        type: "fill",
+        q: "The long-term aim is to protect both population size and _____ diversity.",
+        answer: ["genetic"]
+      }
     ]
   },
   {
