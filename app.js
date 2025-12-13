@@ -26,16 +26,36 @@ const passages = [
   {
     id: 1,
     title: "[ThanhVan] - The Origins of Everyday Tools",
-    label: "Reading Test 1",
+    label: "Full Test 1",
     count: 3969,
     thumb: "assets/pass1.jpg",
     statement: `You should spend about 20 minutes on questions 1 - 13 which are based on Reading Passage below.`,
-    passage:
-      `     Human societies are defined by the objects we surround ourselves with. Simple tools — a sharpened stone, a woven basket, a metal nail — have shaped human routines and transformed environments. Archaeologists trace the development of these objects to intricate sequences of learning: one generation observes, adapts and passes along technique. Yet tools do not only solve immediate problems; they also create cultural practices. The way a community shapes a pot, for example, signals identity and can influence trade networks. As crafts became specialized, a division of labor emerged, and that spurred social stratification. At the same time, the raw materials available in a region — clay, stone, or metal ores — heavily influenced the design choices and the technology that developed there. Over time, tools also carry symbolic weight: ceremonial swords, ornate pottery or decorated combs encode meaning beyond utility. The study of simple objects therefore opens a window onto a society’s economy, belief systems and communication patterns.
+    passage: `
+                                            The kākāpō
 
-      
-      Human societies are defined by the objects we surround ourselves with. Simple tools — a sharpened stone, a woven basket, a metal nail — have shaped human routines and transformed environments. Archaeologists trace the development of these objects to intricate sequences of learning: one generation observes, adapts and passes along technique. Yet tools do not only solve immediate problems; they also create cultural practices. The way a community shapes a pot, for example, signals identity and can influence trade networks. As crafts became specialized, a division of labor emerged, and that spurred social stratification. At the same time, the raw materials available in a region — clay, stone, or metal ores — heavily influenced the design choices and the technology that developed there. Over time, tools also carry symbolic weight: ceremonial swords, ornate pottery or decorated combs encode meaning beyond utility. The study of simple objects therefore opens a window onto a society’s economy, belief systems and communication patterns.
-      `,
+The kākāpō is a nocturnal, flightless parrot that is critically endangered and one of New Zealand's unique treasures
+
+The kākāpō, also known as the owl parrot, is a large, forest-dwelling bird, with a pale owl-like face. Up to 64 cm in length, it has predominantly yellow-green feathers,  forward-facing eyes, a large grey beak, large blue feet, and relatively short wings  and tail. It is the world's only flightless parrot, and is also possibly one of the world's  longest-living birds, with a reported lifespan of up to 100 years.
+
+Kākāpō are solitary birds and tend to occupy the same home range for many years.  They forage on the ground and climb high into trees. They often leap from trees and  flap their wings, but at best manage a controlled descent to the ground. They are  entirely vegetarian, with their diet including the leaves, roots and bark of trees as well as bulbs, and fern fronds.
+
+Kākāpō breed in summer and autumn, but only in years when food is plentiful.  Males play no part in incubation or chick-rearing - females alone incubate eggs and  feed the chicks. The 1-4 eggs are laid in soil, which is repeatedly turned over before  and during incubation. The female kākāpō has to spend long periods away from the  nest searching for food, which leaves the unattended eggs and chicks particularly  vulnerable to predators.
+
+Before humans arrived, kākāpō were common throughout New Zealand's forests.  However, this all changed with the arrival of the first Polynesian settlers about 700  years ago. For the early settlers, the flightless kākāpō was easy prey. They ate its  meat and used its feathers to make soft cloaks. With them came the Polynesian dog  and rat, which also preyed on kākāpō. By the time European colonisers arrived in  the early 1800s, kākāpō had become confined to the central North Island and  forested parts of the South Island. The fall in kākāpō numbers was accelerated by  European colonisation. A great deal of habitat was lost through forest clearance,  and introduced species such as deer depleted the remaining forests of food. Other  predators such as cats, stoats and two more species of rat were also introduced.  The kākāpō were in serious trouble.
+
+In 1894, the New Zealand government launched its first attempt to save the kākāpō.  Conservationist Richard Henry led an effort to relocate several hundred of the birds  to predator-free Resolution Island in Fiordland. Unfortunately, the island didn't  remain predator free - stoats arrived within six years, eventually destroying the  kākāpō population. By the mid-1900s, the kākāpō was practically a lost species.  Only a few clung to life in the most isolated parts of New Zealand.
+
+From 1949 to 1973, the newly formed New Zealand Wildlife Service made over 60  expeditions to find kākāpō, focusing mainly on Fiordland. Six were caught, but there  were no females amongst them and all but one died within a few months of captivity. In 1974, a new initiative was launched, and by 1977, 18 more kākāpō were found in  Fiordland. However, there were still no females. In 1977, a large population of males  was spotted in Rakiura - a large island free from stoats, ferrets and weasels. There were about 200 individuals, and in 1980 it was confirmed females were also present.  These birds have been the foundation of all subsequent work in managing the  species.
+
+Unfortunately, predation by feral cats on Rakiura Island led to a rapid decline in  kākāpō numbers. As a result, during 1980-97, the surviving population was  evacuated to three island sanctuaries: Codfish Island, Maud Island and Little Barrier  Island. However, breeding success was hard to achieve. Rats were found to be a  major predator of kākāpō chicks and an insufficient number of chicks survived to  offset adult mortality. By 1995, although at least 12 chicks had been produced on the islands, only three had survived. The kākāpō population had dropped to 51 birds.  The critical situation prompted an urgent review of kākāpō management in New  Zealand.
+
+In 1996, a new Recovery Plan was launched, together with a specialist advisory  group called the Kākāpō Scientific and Technical Advisory Committee and a higher  amount of funding. Renewed steps were taken to control predators on the three  islands. Cats were eradicated from Little Barrier Island in 1980, and possums were  eradicated from Codfish Island by 1986. However, the population did not start to  increase until rats were removed from all three islands, and the birds were more  intensively managed. This involved moving the birds between islands,  supplementary feeding of adults and rescuing and hand-raising any failing chicks.
+
+After the first five years of the Recovery Plan, the population was on target. By 2000,  five new females had been produced, and the total population had grown to 62 birds. For the first time, there was cautious optimism for the future of kākāpō and by  June 2020, a total of 210 birds was recorded.  
+
+Today, kākāpō management continues to be guided by the kākāpō Recovery Plan.  Its key goals are: minimise the loss of genetic diversity in the kākāpō population,  restore or maintain sufficient habitat to accommodate the expected increase in the  kākāpō population, 
+
+    `,
     questions: [
       { id: "p1_q1", type: "dropdown", q: "The passage primarily discusses:", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "B" },
       { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
@@ -46,7 +66,7 @@ const passages = [
   {
     id: 2,
     title: "[ThanhVan] - Urban Gardens and City Life",
-    label: "Reading Test 2",
+    label: "Full Test 2",
     count: 3350,
     thumb: "assets/pass2.jpg",
     passage:
@@ -60,7 +80,7 @@ const passages = [
   {
     id: 3,
     title: "[ThanhVan] - Language Change Over Generations",
-    label: "Reading Test 3",
+    label: "Full Test 3",
     count: 2086,
     thumb: "assets/pass3.jpg",
     passage:
@@ -74,7 +94,7 @@ const passages = [
   {
     id: 4,
     title: "[ThanhVan] - The Ethics of Autonomous Vehicles",
-    label: "Reading Test 4",
+    label: "Full Test 4",
     count: 4020,
     thumb: "assets/pass4.jpg",
     passage:
@@ -88,7 +108,7 @@ const passages = [
   {
     id: 5,
     title: "[ThanhVan] - Small Businesses and Digital Platforms",
-    label: "Reading Test 5",
+    label: "Passage 1",
     count: 2813,
     thumb: "assets/pass5.jpg",
     passage:
@@ -102,7 +122,7 @@ const passages = [
   {
     id: 6,
     title: "[ThanhVan] - The Rewilding Movement",
-    label: "Reading Test 6",
+    label: "Passage 2",
     count: 14455,
     thumb: "assets/pass6.jpg",
     passage:
@@ -116,7 +136,7 @@ const passages = [
   {
     id: 7,
     title: "[ThanhVan] - Sleep and Memory Consolidation",
-    label: "Reading Test 7",
+    label: "Passage 3",
     count: 943,
     thumb: "assets/pass7.jpg",
     passage:
@@ -130,7 +150,7 @@ const passages = [
   {
     id: 8,
     title: "[ThanhVan] - Microplastics in the Food Chain",
-    label: "Reading Test 8",
+    label: "Passage 4",
     count: 402,
     thumb: "assets/pass8.jpg",
     passage:
@@ -144,7 +164,7 @@ const passages = [
   {
     id: 9,
     title: "[ThanhVan] - Remote Work and Urban Geography",
-    label: "Reading Test 9",
+    label: "Passage 5",
     count: 1077,
     thumb: "assets/pass9.jpg",
     passage:
@@ -158,7 +178,7 @@ const passages = [
   {
     id: 10,
     title: "[ThanhVan] - The Science of Taste",
-    label: "Reading Test 10",
+    label: "Passage 6",
     count: 4020,
     thumb: "assets/pass10.jpg",
     passage:
@@ -172,7 +192,7 @@ const passages = [
   {
     id: 11,
     title: "[ThanhVan] - Memory Aids and Modern Learning",
-    label: "Reading Test 11",
+    label: "Passage 7",
     count: 2813,
     thumb: "assets/pass11.jpg",
     passage:
@@ -186,7 +206,7 @@ const passages = [
   {
     id: 12,
     title: "[ThanhVan] - Water-Sensitive Urban Design",
-    label: "Reading Test 12",
+    label: "Passage 8",
     count: 107,
     thumb: "assets/pass12.jpg",
     passage:
@@ -200,7 +220,7 @@ const passages = [
   {
     id: 13,
     title: "[ThanhVan] - The Art Market and Digital Sales",
-    label: "Reading Test 13",
+    label: "Passage 9",
     count: 4020,
     thumb: "assets/pass13.jpg",
     passage:
@@ -214,7 +234,7 @@ const passages = [
   {
     id: 14,
     title: "[ThanhVan] - Plant Communication through Roots",
-    label: "Reading Test 14",
+    label: "Passage 10",
     count: 943,
     thumb: "assets/pass14.jpg",
     passage:
@@ -228,7 +248,7 @@ const passages = [
   {
     id: 15,
     title: "[ThanhVan] - The Revival of Artisan Baking",
-    label: "Reading Test 15",
+    label: "Passage 11",
     count: 1077,
     thumb: "assets/pass15.jpg",
     passage:
@@ -242,7 +262,7 @@ const passages = [
   {
     id: 16,
     title: "[ThanhVan] - Citizen Science and Data Quality",
-    label: "Reading Test 16",
+    label: "Passage 12",
     count: 943,
     thumb: "assets/pass16.jpg",
     passage:
@@ -256,7 +276,7 @@ const passages = [
   {
     id: 17,
     title: "[ThanhVan] - Portable Solar and Off-grid Power",
-    label: "Reading Test 17",
+    label: "Passage 13",
     count: 107,
     thumb: "assets/pass17.jpg",
     statement: `You should spend about 20 minutes on questions 1 - 13 which are based on Reading Passage 1 below.`,
@@ -271,7 +291,7 @@ const passages = [
   {
     id: 18,
     title: "[ThanhVan] - Language Apps and Motivation",
-    label: "Reading Test 18",
+    label: "Passage 14",
     count: 3350,
     thumb: "assets/pass18.jpg",
     passage:
@@ -285,7 +305,7 @@ const passages = [
   {
     id: 19,
     title: "[ThanhVan] - Noise Pollution and Urban Health",
-    label: "Reading Test 19",
+    label: "Passage 15",
     count: 4020,
     thumb: "assets/pass19.jpg",
     passage:
@@ -299,7 +319,7 @@ const passages = [
   {
     id: 20,
     title: "[ThanhVan] - The Role of Libraries Today",
-    label: "Reading Test 20",
+    label: "Passage 16",
     count: 2078,
     thumb: "assets/pass20.jpg",
     passage:

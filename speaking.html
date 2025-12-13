@@ -1,85 +1,26 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IELTS Reading</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IELTS Speaking Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,system-ui;background:#0b1020;color:#e7e9ee}
+.wrap{max-width:900px;margin:40px auto;padding:0 20px}
+.title{font-size:32px;font-weight:800;margin-bottom:20px}
+.card{background:#11162a;border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:22px;margin-bottom:20px}
+.cue{color:#cfd3ff;line-height:1.6}
+.btn{margin-top:14px;padding:12px 18px;border-radius:14px;font-weight:800;border:none;cursor:pointer;background:linear-gradient(135deg,#ff4da6,#7c7cff);color:#0b1020}
+</style>
 </head>
 <body>
-
-<div class="container">
-
-    <!-- LEFT: PASSAGE -->
-    <div class="passage">
-        <h2>Section A</h2>
-        <p>
-            Music is one of the human species' relatively few universal abilities...
-            (bạn đặt toàn bộ passage tại đây)
-        </p>
-
-        <h2>Section B</h2>
-        <p>
-            But thanks to a decade-long wave of neuroscience research...
-        </p>
-    </div>
-
-    <!-- RIGHT: QUESTIONS -->
-    <div class="questions">
-        <h2>Questions 1–5</h2>
-        <p>Choose the correct heading for each section from the list below.</p>
-
-        <div class="box">
-            <h3>List of Headings</h3>
-            <ul>
-                <li>i. Communication in music with animals</li>
-                <li>ii. New discoveries on animal music</li>
-                <li>iii. Music and language contrasted</li>
-                <li>iv. Current research on music</li>
-                <li>v. Music is beneficial for infants</li>
-                <li>vi. Music transcends cultures</li>
-                <li>vii. Look back at some of the historical theories</li>
-                <li>viii. Are we genetically designed for music?</li>
-            </ul>
-        </div>
-
-        <div class="question-item">
-            <span class="q-number">1</span>
-            <select id="q1">
-                <option value="">— Select —</option>
-                <option value="i">i</option>
-                <option value="ii">ii</option>
-                <option value="iii">iii</option>
-                <option value="iv">iv</option>
-                <option value="v">v</option>
-                <option value="vi">vi</option>
-                <option value="vii">vii</option>
-                <option value="viii">viii</option>
-            </select>
-            <span class="section-name">Section A</span>
-        </div>
-
-        <div class="question-item">
-            <span class="q-number">2</span>
-            <select id="q2">
-                <option value="">— Select —</option>
-                <option value="i">i</option>
-                <option value="ii">ii</option>
-                <option value="iii">iii</option>
-                <option value="iv">iv</option>
-                <option value="v">v</option>
-                <option value="vi">vi</option>
-                <option value="vii">vii</option>
-                <option value="viii">viii</option>
-            </select>
-            <span class="section-name">Section B</span>
-        </div>
-
-        <button class="submit" onclick="checkAnswers()">Hoàn thành</button>
-        <div id="result"></div>
-    </div>
+<div class="wrap">
+<div class="title">🗣 IELTS Speaking</div>
+<div class="card">
+<h3>Part 2 – Cue Card</h3>
+<p class="cue">Describe a book you recently read.<br/>You should say:<br/>• what the book was<br/>• when you read it<br/>• why you liked or disliked it<br/>and explain how it influenced you.</p>
+<button class="btn">🎙 Start Recording</button>
 </div>
-
-<script src="script.js"></script>
+</div>
 </body>
 </html>

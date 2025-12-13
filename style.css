@@ -20,26 +20,105 @@ body {
 }
 
 /* Header */
+/* ===== Header Wrapper ===== */
 .main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   padding: 14px 28px;
-  background: linear-gradient(90deg, var(--pink-600), var(--pink-400));
-  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.55)
+  );
+
+  border-bottom: 1px solid rgba(255, 77, 166, 0.25);
 }
 
-.main-header .brand {
+/* ===== Brand ===== */
+.brand {
+  font-size: 22px;
   font-weight: 800;
-  font-size: 20px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ff4da6, #7c7cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
 }
 
-.main-nav a {
-  color: rgba(255, 255, 255, 0.95);
-  text-decoration: none;
-  margin-left: 18px;
-  font-weight: 600;
+/* ===== Navigation ===== */
+.main-nav {
+  display: flex;
+  gap: 26px;
+  align-items: center;
 }
+
+/* ===== Nav Links ===== */
+.main-nav a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1f2433;
+  padding: 6px 2px;
+  transition: color 0.3s ease;
+}
+
+/* ===== Underline animation ===== */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(135deg, #ff4da6, #7c7cff);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s ease;
+}
+
+/* ===== Hover effect ===== */
+.main-nav a:hover {
+  color: #ff4da6;
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ===== Active page ===== */
+.main-nav a.active {
+  color: #ff4da6;
+}
+
+.main-nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 12px 18px;
+  }
+
+  .main-nav {
+    gap: 18px;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+  }
+}
+
 
 /* Container for index */
 .container {
@@ -427,4 +506,63 @@ select.answer {
 .timer.expired {
   background: #ffcccc;
   color: #a80000;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.main-footer {
+  margin-top: 48px;
+  padding: 22px 16px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 240, 247, 0.9),
+    rgba(255, 255, 255, 0.9)
+  );
+
+  border-top: 1px solid rgba(226, 58, 122, 0.18);
+  text-align: center;
+
+  font-size: 14px;
+  color: #7a4a5a;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle highlight line */
+.main-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(135deg, #e23a7a, #ff8fb8);
+  border-radius: 999px;
+  transform: translateX(-50%);
+  opacity: 0.85;
+}
+
+/* footer text */
+.main-footer div {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* brand highlight */
+.main-footer span {
+  font-weight: 800;
+  background: linear-gradient(135deg, #e23a7a, #7c7cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* responsive */
+@media (max-width: 480px) {
+  .main-footer {
+    font-size: 13px;
+    padding: 18px 12px;
+  }
 }
