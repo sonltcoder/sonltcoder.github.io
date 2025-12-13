@@ -61,6 +61,7 @@ Today, kākāpō management continues to be guided by the kākāpō Recovery Pla
       { id: "p1_q2", type: "dropdown", q: "Which idea is emphasised about tools?", choices: ["A", "B", "C", "D", "E", "F", "G"], answer: "F" },
       { id: "p1_q3", type: "mcq", q: "Which factor shaped tool design according to the text?", choices: ["Religion", "Raw materials", "Weather", "Government"], answer: "Raw materials" },
       { id: "p1_q4", type: "mcq", q: "What social change did tool specialization contribute to?", choices: ["Increased equality", "Division of labor", "Less trade", "Simpler routines"], answer: "Division of labor" },
+      { id: "p1_q5", type: "fill", q: "Diet consists of fern fronds, various parts of a tree and _____ nests are created in _____ where eggs are laid", answer: ["bulbs", "soil"]},
     ]
   },
   {

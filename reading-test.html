@@ -1,6 +1,5 @@
 <!doctype html>
-<html>
-
+<html lang="vi">
 <head>
   <meta charset="utf-8">
   <title>Reading Test — IELTS</title>
@@ -11,212 +10,209 @@
   <div id="header"></div>
 
   <div class="container">
-    <div id="testArea" class="test-wrap">
-      <!-- rendered by JS -->
-    </div>
+    <div id="testArea" class="test-wrap"></div>
   </div>
 
   <div id="footer"></div>
+  <div id="chatbot"></div>
 
   <script src="app.js"></script>
+
   <script>
-    // get id from url
+    // ======================
+    // LOAD TEST DATA
+    // ======================
     const params = new URLSearchParams(location.search);
     const id = parseInt(params.get('id') || '1', 10);
     const data = window.__IELTS_PASSAGES || [];
     const test = data.find(p => p.id === id) || data[0];
 
-    // render UI
+    // ======================
+    // RENDER LAYOUT
+    // ======================
     const wrap = document.getElementById('testArea');
-    const html = `
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-        <div id="timerBox" class="timer">
-          ⏱ <span id="timerText">60:00</span>
-        </div>
+    wrap.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div id="timerBox" class="timer">⏱ <span id="timerText">60:00</span></div>
 
         <div>
           <div class="h2">${test.title}</div>
-          <div style="color:#777; margin-top:6px;">${test.label} • ${test.count.toLocaleString()} lượt làm bài</div>
+          <div style="color:#777;margin-top:4px;">
+            ${test.label} • ${test.count.toLocaleString()} lượt làm
+          </div>
         </div>
-        <div>
-          <button class="btn-check" id="saveProgressBtn">Lưu tiến trình</button>
-        </div>
+
+        <button class="btn-check" id="saveProgressBtn">Lưu tiến trình</button>
       </div>
 
       <div class="test-grid">
         <div class="passage">
-          <h3 style="margin-top:0;color:var(--pink-600)">${test.statement}</h3>
-          <div style="white-space:pre-wrap; font-size:15px; line-height:1.6;">${escapeHtml(test.passage)}</div>
+          <h3 style="color:var(--pink-600)">${test.statement}</h3>
+          <div style="white-space:pre-wrap;line-height:1.6;">
+            ${escapeHtml(test.passage)}
+          </div>
         </div>
 
         <div class="q-panel">
-          <div class="list-box">
-            <h4 style="margin:6px 0 8px;">List of Headings / Statements</h4>
-            <ul style="margin:0; padding-left:18px;">
-              <li>A. Sample statement A</li>
-              <li>B. Sample statement B</li>
-              <li>C. Sample statement C</li>
-              <li>D. Sample statement D</li>
-              <li>E. Sample statement E</li>
-              <li>F. Sample statement F</li>
-              <li>G. Sample statement G</li>
-            </ul>
-          </div>
-
           <div id="questionsArea"></div>
 
-          <div style="margin-top:8px; display:flex; gap:12px;">
+          <div style="margin-top:14px;display:flex;gap:10px;">
             <button class="btn-check" id="checkBtn">Chấm điểm</button>
-            <button class="btn-check" id="resetBtn" style="background:#fff;color:var(--pink-600);border:1px solid rgba(226,58,122,0.12)">Reset</button>
+            <button class="btn-check" id="resetBtn"
+              style="background:#fff;color:var(--pink-600);border:1px solid rgba(226,58,122,.2)">
+              Reset
+            </button>
           </div>
 
           <div id="resultBox" class="result"></div>
         </div>
       </div>
     `;
-    wrap.innerHTML = html;
 
-    // helper escape
     function escapeHtml(s) {
-      return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return (s || '')
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
     }
 
-    // render questions
+    // ======================
+    // RENDER QUESTIONS
+    // ======================
     const qArea = document.getElementById('questionsArea');
+
     test.questions.forEach((q, idx) => {
+
+      // DROPDOWN
       if (q.type === 'dropdown') {
-        const row = document.createElement('div');
-        row.className = 'q-row';
-        row.innerHTML = `
-          <div class="q-num">${idx + 1}</div>
-          <div style="flex:1">
-            <div style="font-weight:700">${q.q}</div>
-            <select class="answer" id="${q.id}">
-              <option value="">— Select —</option>
-              ${q.choices.map(c => `<option value="${c}">${c}</option>`).join('')}
-            </select>
-          </div>
-        `;
-        qArea.appendChild(row);
-      } else if (q.type === 'mcq') {
-        const row = document.createElement('div');
-        row.className = 'q-row';
-        row.innerHTML = `
-          <div class="q-num">${idx + 1}</div>
-          <div style="flex:1">
-            <div style="font-weight:700">${q.q}</div>
-            <div style="display:flex;flex-direction:column;margin-top:8px;">
-              ${q.choices.map((c, ci) => `
-                <label style="margin-bottom:6px">
+        qArea.innerHTML += `
+          <div class="q-row">
+            <div class="q-num">${idx + 1}</div>
+            <div style="flex:1">
+              <b>${q.q}</b><br>
+              <select id="${q.id}">
+                <option value="">— Select —</option>
+                ${q.choices.map(c => `<option value="${c}">${c}</option>`).join('')}
+              </select>
+            </div>
+          </div>`;
+      }
+
+      // MCQ
+      else if (q.type === 'mcq') {
+        qArea.innerHTML += `
+          <div class="q-row">
+            <div class="q-num">${idx + 1}</div>
+            <div style="flex:1">
+              <b>${q.q}</b>
+              ${q.choices.map(c => `
+                <label style="display:block;margin-top:6px">
                   <input type="radio" name="${q.id}" value="${c}"> ${c}
                 </label>`).join('')}
             </div>
-          </div>
-        `;
-        qArea.appendChild(row);
+          </div>`;
+      }
+
+      // FILL IN THE BLANK
+      else if (q.type === 'fill') {
+        let i = 0;
+        const html = q.q.replace(/_____/g, () =>
+          `<input type="text" class="fill-input" id="${q.id}_${i++}">`
+        );
+
+        qArea.innerHTML += `
+          <div class="q-row">
+            <div class="q-num">${idx + 1}</div>
+            <div style="flex:1;line-height:2">${html}</div>
+          </div>`;
       }
     });
 
-    // scoring logic
-    document.getElementById('checkBtn').addEventListener('click', () => {
+    // ======================
+    // CHECK ANSWERS
+    // ======================
+    document.getElementById('checkBtn').onclick = () => {
       let correct = 0;
+
       test.questions.forEach(q => {
+
         if (q.type === 'dropdown') {
-          const val = (document.getElementById(q.id).value || '').trim();
-          if (val && val === q.answer) { correct++; document.getElementById(q.id).style.border = '2px solid #00cc66'; }
-          else if (val) document.getElementById(q.id).style.border = '2px solid #ff5b6b';
-          else document.getElementById(q.id).style.border = '2px solid rgba(0,0,0,0.06)';
-        } else if (q.type === 'mcq') {
+          const el = document.getElementById(q.id);
+          if (el.value === q.answer) {
+            el.style.border = "2px solid #00cc66";
+            correct++;
+          } else if (el.value) {
+            el.style.border = "2px solid #ff5b6b";
+          }
+        }
+
+        else if (q.type === 'mcq') {
           const sel = document.querySelector(`input[name="${q.id}"]:checked`);
           if (sel && sel.value === q.answer) {
             correct++;
-            sel.parentElement.style.border = '1px solid #00cc66';
+            sel.parentElement.style.border = "1px solid #00cc66";
           } else if (sel) {
-            sel.parentElement.style.border = '1px solid #ff5b6b';
+            sel.parentElement.style.border = "1px solid #ff5b6b";
           }
         }
-      });
-      document.getElementById('resultBox').innerText = `Bạn đúng ${correct} / ${test.questions.length}`;
-      // save quick result to localStorage
-      const key = `ielts_passage_${test.id}_lastscore`;
-      localStorage.setItem(key, JSON.stringify({ score: correct, total: test.questions.length, time: Date.now() }));
-    });
 
-    // reset
-    document.getElementById('resetBtn').addEventListener('click', () => {
+        else if (q.type === 'fill') {
+          let ok = true;
+          q.answer.forEach((ans, i) => {
+            const input = document.getElementById(`${q.id}_${i}`);
+            const user = (input.value || '').trim().toLowerCase();
+            const right = ans.toLowerCase();
+            if (user === right) {
+              input.classList.add('fill-correct');
+            } else {
+              input.classList.add('fill-wrong');
+              ok = false;
+            }
+          });
+          if (ok) correct++;
+        }
+      });
+
+      document.getElementById('resultBox').innerText =
+        `Bạn đúng ${correct} / ${test.questions.length}`;
+    };
+
+    // ======================
+    // RESET
+    // ======================
+    document.getElementById('resetBtn').onclick = () => {
       test.questions.forEach(q => {
-        if (q.type === 'dropdown') { document.getElementById(q.id).value = ''; document.getElementById(q.id).style.border = '1px solid rgba(0,0,0,0.08)'; }
-        else if (q.type === 'mcq') { const sel = document.querySelectorAll(`input[name="${q.id}"]`); sel.forEach(i => { i.checked = false; if (i.parentElement) i.parentElement.style.border = 'none'; }); }
+        if (q.type === 'dropdown') document.getElementById(q.id).value = '';
+        if (q.type === 'mcq')
+          document.querySelectorAll(`input[name="${q.id}"]`).forEach(i => i.checked = false);
+        if (q.type === 'fill')
+          q.answer.forEach((_, i) => {
+            const el = document.getElementById(`${q.id}_${i}`);
+            el.value = '';
+            el.className = 'fill-input';
+          });
       });
       document.getElementById('resultBox').innerText = '';
-    });
+    };
 
-    // save progress button
-    document.getElementById('saveProgressBtn').addEventListener('click', () => {
-      const answers = {};
-      test.questions.forEach(q => {
-        if (q.type === 'dropdown') answers[q.id] = document.getElementById(q.id).value || '';
-        else if (q.type === 'mcq') { const sel = document.querySelector(`input[name="${q.id}"]:checked`); answers[q.id] = sel ? sel.value : ''; }
-      });
-      localStorage.setItem(`ielts_passage_${test.id}_answers`, JSON.stringify(answers));
-      alert('Đã lưu tiến trình cho bài ' + test.id);
-    });
+    // ======================
+    // TIMER 60 MIN
+    // ======================
+    let timeLeft = 3600;
+    const timerText = document.getElementById('timerText');
 
-    // load saved answers if any
-    (function loadSaved() {
-      const raw = localStorage.getItem(`ielts_passage_${test.id}_answers`);
-      if (!raw) return;
-      try {
-        const obj = JSON.parse(raw);
-        test.questions.forEach(q => {
-          if (q.type === 'dropdown' && obj[q.id]) document.getElementById(q.id).value = obj[q.id];
-          else if (q.type === 'mcq' && obj[q.id]) {
-            const sel = document.querySelectorAll(`input[name="${q.id}"]`);
-            sel.forEach(i => { if (i.value === obj[q.id]) i.checked = true; });
-          }
-        });
-      } catch (e) { }
-    })();
-
-    // =========================
-    //  TIMER COUNTDOWN 60 MIN
-    // =========================
-
-    let timeLeft = 60 * 60;   // 60 minutes = 3600 seconds
-    const timerText = document.getElementById("timerText");
-    const timerBox = document.getElementById("timerBox");
-
-    function formatTime(sec) {
-      const m = Math.floor(sec / 60).toString().padStart(2, '0');
-      const s = Math.floor(sec % 60).toString().padStart(2, '0');
-      return `${m}:${s}`;
-    }
-
-    timerText.textContent = formatTime(timeLeft);
-
-    const timerInterval = setInterval(() => {
+    setInterval(() => {
       timeLeft--;
-      timerText.textContent = formatTime(timeLeft);
+      timerText.textContent =
+        String(Math.floor(timeLeft / 60)).padStart(2, '0') + ':' +
+        String(timeLeft % 60).padStart(2, '0');
 
       if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        timerBox.classList.add("expired");
-        timerText.textContent = "HẾT GIỜ";
-
-        // khóa toàn bộ input
-        document.querySelectorAll("select, input[type=radio]").forEach(el => {
-          el.disabled = true;
-        });
-
-        // auto chấm điểm
         document.getElementById('checkBtn').click();
-
-        alert("Hết 60 phút! Bài đã được chấm tự động.");
+        alert("Hết giờ!");
       }
-
     }, 1000);
-  </script>
-  <div id="chatbot"></div>
-</body>
 
+  </script>
+</body>
 </html>

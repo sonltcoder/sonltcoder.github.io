@@ -1,3 +1,29 @@
+function formatAIMessage(text) {
+  if (!text) return "";
+
+  return text
+    // escape basic
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+
+    // headings
+    .replace(/^### (.*)$/gm, "<h3>$1</h3>")
+    .replace(/^#### (.*)$/gm, "<h4>$1</h4>")
+
+    // bold
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+
+    // bullet list
+    .replace(/^- (.*)$/gm, "<li>$1</li>")
+    .replace(/(<li>.*<\/li>)/gs, "<ul>$1</ul>")
+
+    // line breaks
+    .replace(/\n\n+/g, "<br><br>")
+    .replace(/\n/g, "<br>");
+}
+
+
 const sendBtn = document.getElementById("sendBtn");
 const userInput = document.getElementById("userInput");
 
@@ -80,6 +106,6 @@ async function sendMsg() {
   document.getElementById(typingId)?.remove();
 
   // Hiện phản hồi
-  messagesBox.innerHTML += `<div class="msg-ai">${aiMsg}</div>`;
+  messagesBox.innerHTML += `<div class="msg-ai">${formatAIMessage(aiMsg)}</div>`;
   scrollDown();
 }
